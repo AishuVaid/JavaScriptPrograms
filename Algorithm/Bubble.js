@@ -11,7 +11,8 @@
    * @author : Aishwarya RM <aishu.vaid@gmail.com>
  * @version : 1.0
  * @since : 28-01-2019
- */
+ *******************************************************/
+
 var read=require('../Utility/Util');
 var input=require('readline-sync');
 var arrayLength=input.questionInt("Enter the array length");

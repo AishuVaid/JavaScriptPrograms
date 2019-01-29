@@ -24,11 +24,10 @@ module.exports =
         * @description : invoke this method and pass user input as parameter.
         * @function: username takes the user name and prints the value
         * **********************************************************/
-        replaceString(username) 
-        {
-          var input = "Hello <<UserName>>, How are you?";
-          var output1 = input.replace(/<<UserName>>/g, username);//Regex
-         console.log(output1);
+        replaceString(username) {
+            var input = "Hello <<UserName>>, How are you?";
+            var output1 = input.replace(/<<UserName>>/g, username);//Regex
+            console.log(output1);
         },
 
 
@@ -44,16 +43,14 @@ module.exports =
         * @function: username takes the user name and prints the value
         * ***************************************************************** */
 
-        flipACoin(result) 
-        {
+        flipACoin(result) {
             var head = 0;//declare head variable
             var tail = 0;//declare tail variable
             var n = 0;
             for (n = 0; n < result; n++) //looping over the result
             {
                 var flip = Math.random();
-                if (flip > 0.5) 
-                {
+                if (flip > 0.5) {
                     head++;//increment head
                 }
             }
@@ -64,7 +61,7 @@ module.exports =
 
         },
 
-    
+
         /***********************************************************************
          * *******************CheckLeapYear.js**************************************
          * 2.check if leap year or not.
@@ -75,83 +72,65 @@ module.exports =
         * @function: Print the year is a Leap Year or not.
          * ***************************************************************** */
 
-    checkLeapYear(year) 
-        {
+        checkLeapYear(year) {
 
-            if (year > 999) 
-            {
-                if ((year % 4 == 0) || (year % 400 == 0) || (year % 100 == 0)) 
-                {
+            if (year > 999) {
+                if ((year % 4 == 0) || (year % 400 == 0) || (year % 100 == 0)) {
                     console.log("It is a leap year!!");
                 }
-                else 
-                {
+                else {
                     console.log("It's not a leap year");
                 }
             }
-            else 
-            {
+            else {
                 console.log("Enter a valid year");
             }
 
         },
 
-    /********************************POWER OF 2**************************************
-     * 3.Power of 2.js
-    *@Purpose : This program takes the command line argument N and prints the table of the
-         powers of 2 that are less than or equal to 2^N.
-    *@description :
-  **************************************************************************/
+        /********************************POWER OF 2**************************************
+         * 3.Power of 2.js
+        *@Purpose : This program takes the command line argument N and prints the table of the
+             powers of 2 that are less than or equal to 2^N.
+        *@description :
+      **************************************************************************/
 
-      getPowerOf2(power) 
-        { 
+        getPowerOf2(power) {
 
             var i;
-            if (power >= 0 && power < 31) 
-            {
-                for (i = 0; i <= power; i++)  
-                {
+            if (power >= 0 && power < 31) {
+                for (i = 0; i <= power; i++) {
 
                     console.log("2^" + i + "=" + Math.pow(2, i))
                 }
             }
         },
 
-        findHarmonicNumber(num) 
-        {
-            try 
-            {
-                 var sum = 0, i = 0;
-                if (num != 0) 
-                {
-                    for (i = 1; i <= num; i++) 
-                    {
+        findHarmonicNumber(num) {
+            try {
+                var sum = 0, i = 0;
+                if (num != 0) {
+                    for (i = 1; i <= num; i++) {
                         sum += (1 / i);
                     }
                     console.log("harmonic value " + num + "=" + sum);
                 }
-                else 
-                {
+                else {
                     console.log("please enter the number");
                 }
             }
-            catch (e) 
-            {
+            catch (e) {
                 console.log(e.message);
             }
         },
 
 
-        getPrimeFactors(number) 
-        {
+        getPrimeFactors(number) {
 
             var i;
-            if (number > 0) 
-            {
-                for (i = 2; i <= number; i++) 
-                {
-                    while (number % i == 0) 
-                    {
+            if (number > 0) {
+                for (i = 2; i <= number; i++) {
+                    while (number % i == 0) {
                         number = number / i;
                         console.log(i);
                     }
@@ -160,40 +139,35 @@ module.exports =
             }
         },
 
-  /******************************************************************************
-   * *******************PlayGambler.js**************************************
-   * @Purpose : Print Number of wins and percentage of win and loss.
-   *@description :
-   *
-   *
-   *
-*@overview : Simulates a gambler who start with $stake and place fair 
-*$1 bets until he goes broke. play till gambler is broke or has won.
-*@function : Keeps track of the number of times he/she wins and the 
-number of bets he/she makes. Run the experiment N times, averages 
-the results, and prints them out.
+        /******************************************************************************
+         * *******************PlayGambler.js**************************************
+         * @Purpose : Print Number of wins and percentage of win and loss.
+         *@description :
+         *
+         *
+         *
+      *@overview : Simulates a gambler who start with $stake and place fair 
+      *$1 bets until he goes broke. play till gambler is broke or has won.
+      *@function : Keeps track of the number of times he/she wins and the 
+      number of bets he/she makes. Run the experiment N times, averages 
+      the results, and prints them out.
+      
+      
+      ***********************************************************************
+      */
 
 
-***********************************************************************
-*/
 
-
-
-        playGambler(stake, goal, times) 
-        {
+        playGambler(stake, goal, times) {
             var win = 0, loss = 0;
-            for (let i = 0; i < times; i++) 
-            {
-                while (times > 0 && stake < goal && stake > 0) 
-                {
-                    if (Math.random() > 0.5) 
-                    {
+            for (let i = 0; i < times; i++) {
+                while (times > 0 && stake < goal && stake > 0) {
+                    if (Math.random() > 0.5) {
                         win++;
                         stake++;
                         times--;
                     }
-                    else 
-                    {
+                    else {
                         loss++;
                         stake--;
                         times--;
@@ -208,34 +182,31 @@ the results, and prints them out.
         },
 
 
-    /*********************get coupon number *************************
-     * 8.coupon number
-     * @purpose : To generate N Distinct Coupon Numbers.
-     * 
-     * @description :  Given N distinct Coupon Numbers, how many random 
-     * numbers do you need to generate distinct coupon number? 
-     * This program simulates this random process.
-     * 
-     * @function : Write Class Static Functions to generate 
-     * random number and to process distinct coupons.
+        /*********************get coupon number *************************
+         * 8.coupon number
+         * @purpose : To generate N Distinct Coupon Numbers.
+         * 
+         * @description :  Given N distinct Coupon Numbers, how many random 
+         * numbers do you need to generate distinct coupon number? 
+         * This program simulates this random process.
+         * 
+         * @function : Write Class Static Functions to generate 
+         * random number and to process distinct coupons.
+    
+    
+    
+        */
 
 
 
-    */
 
 
-
-
-
-        getCoupon(input) 
-        {
+        getCoupon(input) {
             var ar = [];
             var count = 0;
-            while (count < input) 
-            {
+            while (count < input) {
                 var random = Math.round(Math.random() * 100);
-                if (!ar.includes(random)) 
-                {
+                if (!ar.includes(random)) {
                     ar.push(random);
                 }
                 count++;
@@ -246,33 +217,30 @@ the results, and prints them out.
 
 
 
-         /*********************2D array *************************
-     * 8.2Dimensional array
-     * @purpose :  create 2 dimensional array in memory to read in M rows and N cols 
+        /*********************2D array *************************
+    * 8.2Dimensional array
+    * @purpose :  create 2 dimensional array in memory to read in M rows and N cols 
 
-     * 
-     * @description :   A library for reading in 2D arrays of integers, 
-     * doubles, or booleans from standard input and printing
-     *  them out to standard output.
-     * @function :  Print function to print 2 Dimensional Array. 
-     * In Java use PrintWriter with OutputStreamWriter to print the output to the screen.
-
-
-
-    */
+    * 
+    * @description :   A library for reading in 2D arrays of integers, 
+    * doubles, or booleans from standard input and printing
+    *  them out to standard output.
+    * @function :  Print function to print 2 Dimensional Array. 
+    * In Java use PrintWriter with OutputStreamWriter to print the output to the screen.
 
 
 
-    getArray(row,cloumn,read)
-        {
-            var arr=[];
-            for(let i=0;i<row;i++)
-            {
+   */
+
+
+
+        getArray(row, cloumn, read) {
+            var arr = [];
+            for (let i = 0; i < row; i++) {
                 arr.push([])
-                for(let j=0;j<cloumn;j++)
-                {
-                    var element=read.question("Enter the array elements =");
-                    arr[i][j]=element;
+                for (let j = 0; j < cloumn; j++) {
+                    var element = read.question("Enter the array elements =");
+                    arr[i][j] = element;
                 }
             }
             console.log(arr);
@@ -296,17 +264,12 @@ the results, and prints them out.
 
 
 
-        obtainTriplets(arr) 
-        {
+        obtainTriplets(arr) {
             var count = 0;
-            for (let i = 0; i < arr.length-2; i++) 
-            {
-                for (let j = i + 1; j < arr.length-1; j++) 
-                {
-                    for (let k = j + 1; k < arr.length; k++) 
-                    {
-                        if ((Number(arr[i]) +Number(arr[j]) +Number(arr[k]))== 0) 
-                        {
+            for (let i = 0; i < arr.length - 2; i++) {
+                for (let j = i + 1; j < arr.length - 1; j++) {
+                    for (let k = j + 1; k < arr.length; k++) {
+                        if ((Number(arr[i]) + Number(arr[j]) + Number(arr[k])) == 0) {
                             console.log(arr[i] + "   " + arr[j] + "   " + arr[k]);
                             count++;
                         }
@@ -335,8 +298,7 @@ the results, and prints them out.
 
 
 
-        getDistance() 
-        {
+        getDistance() {
 
             var x = process.argv[3];
             var y = process.argv[2];
@@ -355,12 +317,11 @@ the results, and prints them out.
 
 
 
-    
 
 
-        getCurrentSecond() 
-        {
-          var dt = new Date();
+
+        getCurrentSecond() {
+            var dt = new Date();
             var sec = dt.getSeconds();
             return sec;
         },
@@ -403,79 +364,59 @@ the results, and prints them out.
 
 
 
-        getChill(t, v) 
-        {
+        getChill(t, v) {
             var result = (35.74 + 0.6215) * t + (0.4275 * t - 35.75) * Math.pow(v, 0.16);
             console.log(result);
 
         },
 
-/****************************************************************************************
- *                         ALGORITHM PROGRAMS
- * **************************************************************************************
- * *******************************Anagram*******************************************
- * 1.Anagram
- * *******************
- * @purpose : take 2 strings as Input such abcd and dcba and check for Anagram.
- * @description : to find whether given strings are anagrams.
- * @function : one string is an anagram of another if the second is simply a 
- * rearrangement of the first
- * ****************************************************************************
- */
-        
-        
-        
-        CheckAnagram(s1, s2) 
-        {
-            var format=/[a-zA-Z0-9]/;
+        /****************************************************************************************
+         *                         ALGORITHM PROGRAMS
+         * **************************************************************************************
+         * *******************************Anagram*******************************************
+         * 1.Anagram
+         * *******************
+         * @purpose : take 2 strings as Input such abcd and dcba and check for Anagram.
+         * @description : to find whether given strings are anagrams.
+         * @function : one string is an anagram of another if the second is simply a 
+         * rearrangement of the first
+         * ****************************************************************************
+         */
+
+
+
+        CheckAnagram(s1, s2) {
+            var format = /[a-zA-Z0-9]/;
             var result;
-            if(format.test(s1) && format.test(s2))
-            /**
-             * condition to check if the input is only characters or numbers
-             */
-            {
-                if(s1.length!==s2.length)
-                {/*
-                   *condition to check if the first string is equal to the second string,
-                   * if the condition is true,it means they cannot be permutations of each
-                   * other,store false in the result. */
-                                         result=false;
+            if (format.test(s1) && format.test(s2))
+             {
+                if (s1.length !== s2.length) {
+                   
+                    result = false;
                 }
-                /**
-                 * split the strings and pass into the array
-                 * sort the array alphabetically
-                 * join the elements of an array into a string and store the sortes string in a variable
-                 */
+                
 
-                 var sorts1=s1.toString().split("").sort().join("");
-                 var sorts2=s2.toString().split("").sort().join("");
-                 /**
-                  * if sorts1 string is equal to sorts2,store true in result else store false
-                  * 
-                  */
-                 result=sorts1===sorts2;
-                 /**
-                  * condition to check the result is true and to print if the given words are anagrams or not
-                  */
+                var sorts1 = s1.toString().split("").sort().join("");
+                var sorts2 = s2.toString().split("").sort().join("");
+                
+                result = sorts1 === sorts2;
+              
 
-                  if(result==true)
-                  {
-                      console.log("is anagram");
-                      return true;
-                  }
-                  else
-                  {
-                      console.log("not anagram");
-                      return false;
+                if (result == true) {
+                    //console.log("is anagram");
+                    return true;
+                }
+                else {
+                   // console.log("not anagram");
+                    return false;
 
-                  }
+                }
             }
-            else
-            {
+            else {
                 console.log("enter only letters or alphabets");
             }
-             },
-    
+        },
+
 
         /*********************Prime Numbers from 0 to 1000****************************
          * 2.isPrime
@@ -485,13 +426,13 @@ the results, and prints them out.
          @function: takes a range of 0-1000 numbers and find the prime numbers in that range.
          */
 
-    
+
 
 
         isPrime(num) {
             if (num == 0 || num == 1)
                 return false;
-           
+
             for (let i = 2; i < num; i++) {
                 if (num % i == 0)
                     return false;
@@ -502,7 +443,7 @@ the results, and prints them out.
 
         primeNum() {
             console.log("Prime number in the range 0 to 1000");
-            
+
             for (let i = 0; i <= 1000; i++) {
                 if (this.isPrime(i)) {
                     console.log(i);
@@ -519,54 +460,43 @@ the results, and prints them out.
          */
 
 
-        isNumberPalindrome(num1)
-        {
-            var str="";
-            num1=num1+"";
-            
-            for(let i=0;i<num1.length;i++)
-            {
-                str=num1.charAt(i)+str;
+        isNumberPalindrome(num1) {
+            var str = "";
+            num1 = num1 + "";
+
+            for (let i = 0; i < num1.length; i++) {
+                str = num1.charAt(i) + str;
             }
-            if(str2==num1)
-            {
+            if (str == num1) {
                 return true;
             }
             return false;
         },
 
-        isAnagramPalindrome()
-        {
+        isAnagramPalindrome() {
             console.log("Prime numbers in the range of 0 to 1000 which are anagram");
             {
-                var arr=[];
-                
-                for(let i=0;i<1000;i++)
-                {
-                    if(this.isPrime(i))
-                    {
+                var arr = [];
+
+                for (let i = 0; i < 1000; i++) {
+                    if (this.isPrime(i)) {
                         arr.push(i);
                     }
                 }
-                
 
-                 for(let i=0;i<arr.length;i++)
-                {
-                     for(let j=i+1;j<arr.length;j++)
-                    {
-                        if(this.CheckAnagram(arr[i],arr[j]))
-                        {
-                            console.log(arr[i]+" and "+arr[j]+" are anagram");
-                            if(this.isNumberPalindrome(arr[i]))
-                            {
-                                console.log(arr[i]+" is palindrome ");
+
+                for (let i = 0; i < arr.length; i++) {
+                    for (let j = i + 1; j < arr.length; j++) {
+                        if (this.CheckAnagram(arr[i], arr[j])) {
+                            console.log(arr[i] + " and " + arr[j] + " are anagram");
+                            if (this.isNumberPalindrome(arr[i])) {
+                                console.log(arr[i] + " is palindrome ");
                             }
-                            if(this.isNumberPalindrome(arr[j]))
-                            {
-                                console.log(arr[j]+" is palindrome ");
+                            if (this.isNumberPalindrome(arr[j])) {
+                                console.log(arr[j] + " is palindrome ");
                             }
                         }
-                    } 
+                    }
                 }
             }
         },
@@ -583,8 +513,7 @@ the results, and prints them out.
 
 
 
-        sortByBubble(array) 
-        {
+        sortByBubble(array) {
 
             for (let a = 0; a < array.length; a++) {
                 for (let b = a + 1; b < array.length; b++) {
@@ -598,14 +527,14 @@ the results, and prints them out.
             console.log("Sorted elements are " + array);
         },
 
-/***********************************Insertion sort*************************************
- * 7.Insertion sort
- * ****************************
- * @purpose : use insertion sort to sort the words in the string array
- * @description : it accepts the input from the user and sort the array using insertion sort.
- * @function : reads in strings from standard input and prints them in sorted order.
- * uses insertion sort
- */
+        /***********************************Insertion sort*************************************
+         * 7.Insertion sort
+         * ****************************
+         * @purpose : use insertion sort to sort the words in the string array
+         * @description : it accepts the input from the user and sort the array using insertion sort.
+         * @function : reads in strings from standard input and prints them in sorted order.
+         * uses insertion sort
+         */
 
 
 
@@ -625,45 +554,42 @@ the results, and prints them out.
             console.log("Sorted elements are " + array);
         },
 
-    /********************************DayOfWeek**************************************** 
-     * 11.Day of week
-     * ****************************
-     * @purpose : 
-    */
+        /********************************DayOfWeek**************************************** 
+         * 11.Day of week
+         * ****************************
+         * @purpose : 
+        */
 
 
 
 
-        findDay(day,month,year)
-        {
-         var y0 = year - Math.floor((14 - month) / 12);
-         var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
-         var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
-        var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
+        findDay(day, month, year) {
+            var y0 = year - Math.floor((14 - month) / 12);
+            var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
+            var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
+            var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
 
-         switch(d0)
-         {
-             case 0:return "Sunday";
-             case 1:return "Monday";
-             case 2:return "Tuesday";
-             case 3:return "Wednesday";
-             case 4:return "Thursday";
-             case 5:return "Friday";
-             case 6:return "Saturday";
+            switch (d0) {
+                case 0: return "Sunday";
+                case 1: return "Monday";
+                case 2: return "Tuesday";
+                case 3: return "Wednesday";
+                case 4: return "Thursday";
+                case 5: return "Friday";
+                case 6: return "Saturday";
 
-         }
+            }
 
         },
 
-        
 
 
 
 
 
 
-        convertTemp(read) 
-        {
+
+        convertTemp(read) {
             var t = 0;
             var cel = 0;
             var far = 0;
@@ -734,45 +660,67 @@ the results, and prints them out.
         },
 
 
-        getBinarySearch(arr,word)
-        {
+        getBinarySearch(arr, word) {
             arr.sort();
-            var li=0;
-            var hi=arr.length-1;
-            var mi=Math.floor((li+hi)/2);
-            while(li<=hi)
-            {
-                if(arr[mi]===word)
-                {
+            var li = 0;
+            var hi = arr.length - 1;
+            var mi = Math.floor((li + hi) / 2);
+            while (li <= hi) {
+                if (arr[mi] === word) {
                     return true;
                 }
-                else if(arr[mi]<word)
-                {
-                    li=mi+1;
+                else if (arr[mi] < word) {
+                    li = mi + 1;
                 }
-               else
-                {
-                    hi=mi-1;
+                else {
+                    hi = mi - 1;
                 }
-                mi=Math.floor((li+hi)/2);
+                mi = Math.floor((li + hi) / 2);
             }
             return false;
         },
 
 
-        countNotes(arr,amount)
-        {
-            var notes=0;
-            for(let i=0;i<arr.length;i++)
-            {
-                if(amount/arr[i]>=1)
-                {
-                    var c=Math.floor(amount/arr[i])
-                    notes=notes+c;
-                    console.log(arr[i]+" notes are :"+c)
-                    amount=amount%arr[i]
+        countNotes(arr, amount) {
+            var notes = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (amount / arr[i] >= 1) {
+                    var c = Math.floor(amount / arr[i])
+                    notes = notes + c;
+                    console.log(arr[i] + " notes are :" + c)
+                    amount = amount % arr[i]
                 }
             }
-            console.log("total number of notes :"+notes);
+            console.log("total number of notes :" + notes);
+        },
+
+
+
+
+
+        findRoot(number) {
+            var temp = number;
+            const epsilon = 1e-15;
+            while (Math.abs(temp - number / temp) > epsilon * temp) {
+                temp = (number / temp + temp) / 2;
+            }
+            console.log("Square root of number is " + temp);
+        },
+
+
+
+
+        toBinary(num)
+        {
+            var temp=num;
+            var string="";
+            while(num>0.9)
+            {
+                var result=Math.floor(num%2);
+                string=result+string;
+                num=num/2;
+            }
+            console.log("Binary value of given number= "+string);
         }
     }
+
