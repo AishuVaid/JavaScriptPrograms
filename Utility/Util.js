@@ -24,7 +24,8 @@ module.exports =
         * @description : invoke this method and pass user input as parameter.
         * @function: username takes the user name and prints the value
         * **********************************************************/
-        replaceString(username) {
+        replaceString(username) 
+        {
             var input = "Hello <<UserName>>, How are you?";
             var output1 = input.replace(/<<UserName>>/g, username);//Regex
             console.log(output1);
@@ -150,13 +151,17 @@ module.exports =
          */
 
 
-        getPrimeFactors(number) {
+        getPrimeFactors(number) 
+        {
 
             var i;
-            if (number > 0) {
-                for (i = 2; i <= number; i++) {
-                    while (number % i == 0) {
-                        number = number / i;
+            if (number > 0) 
+            {
+                for (i = 2; i <= number; i++) 
+                {
+                    while (number % i == 0) 
+                    {
+                 number = number / i;
                         console.log(i);
                     }
 
@@ -226,18 +231,20 @@ module.exports =
 
 
 
-        getCoupon(input) {
-            var ar = [];
-            var count = 0;
-            while (count < input) {
-                var random = Math.round(Math.random() * 100);
-                if (!ar.includes(random)) {
-                    ar.push(random);
-                }
-                count++;
-            }
-            console.log(ar);
-            return count;
+        getCoupon(number) 
+        {
+            var arr=[];
+            var num=0;
+            while(num!=number)
+            {
+                var x=Math.round(Math.random()*number);
+            if(!arr.includes(x))
+           {
+            arr.push(x);
+            num++;
+           }           
+        }
+         console.log(arr);      
         },
 
 
@@ -259,7 +266,8 @@ module.exports =
 
 
 
-        getArray(row, cloumn, read) {
+        getArray(row, cloumn, read) 
+        {
             var arr = [];
             for (let i = 0; i < row; i++) {
                 arr.push([])
@@ -323,7 +331,8 @@ module.exports =
 
 
 
-        getDistance() {
+        getDistance() 
+        {
 
             var x = process.argv[3];
             var y = process.argv[2];
@@ -372,7 +381,8 @@ module.exports =
          */
 
 
-        getEquation(a, b, c) {
+        getEquation(a, b, c) 
+        {
             var root1, root2;
             var delta = (b * b - 4 * a * c);
             console.log("Delta value= " + delta);
@@ -395,6 +405,36 @@ module.exports =
             }
         },
 
+
+
+
+
+
+        stringPermutations(string) {
+            try {
+                var results = [];
+                
+                if (string.length === 1) {
+                    results.push(string);
+                    return results;
+                }
+               
+                for (var i = 0; i < string.length; i++) {
+                    var firstChar = string[i];
+                    var charsLeft = string.substring(0, i) + string.substring(i + 1);
+                    var innerPermutations = this.stringPermutations(charsLeft);
+                   
+                    for (var j = 0; j < innerPermutations.length; j++) {
+                        results.push(firstChar + innerPermutations[j]);
+                    }
+                }
+                return results;
+            } catch (error) {
+                console.log(error.message);
+            }
+        },
+    
+   
 
 
         /**************************WindChill**************************
@@ -525,8 +565,10 @@ module.exports =
             {
                 var arr = [];
 
-                for (let i = 0; i < 1000; i++) {
-                    if (this.isPrime(i)) {
+                for (let i = 0; i < 1000; i++) 
+                {
+                    if (this.isPrime(i)) 
+                    {
                         arr.push(i);
                     }
                 }
@@ -621,7 +663,76 @@ module.exports =
 
 
 
-        findDay(day, month, year) {
+        mergeSort(res)
+        {
+            var n=res.length;
+
+            if(n<2)
+            {
+                return;
+
+            }
+            var mid=Math.floor(n/2);
+            var left=[mid];
+            var right=[n-mid];
+            for(let i=0;i<mid;i++)
+            {
+                left[i]=res[i];
+            }
+            for(j=mid;j<n;j++)
+            {
+                right[j-mid]=res[j];
+            }
+            this.mergeSort(left);
+            this.mergeSort(right);
+            this.mergeSort(left,right,res);
+
+        },
+
+        merge(arr,brr,crr)
+        {
+            var i=0;
+            var j=0;
+            var k=0;
+            while(i<arr.length && j<brr.length)
+            {
+                if(arr[i]<=brr[j])
+                {
+                    crr[k]=arr[i]
+                    i++;
+                }
+                else
+                {
+                 crr[k]=brr[j];
+                  j++;
+                 
+                 }
+                 while(i<arr.length)
+                 {
+                     crr[k]=arr[i];
+                     i++;
+                     k++;
+
+                 }
+                 while(j<brr.length)
+                 {
+                     crr[k]=brr[j];
+                     j++;
+                     k++;
+                 }
+                 return crr;
+            }
+        },
+
+        /*******************find day******************************
+         * 
+         */
+
+
+
+
+        findDay(day, month, year) 
+         {
             var y0 = year - Math.floor((14 - month) / 12);
             var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
             var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
@@ -639,6 +750,10 @@ module.exports =
             }
 
         },
+
+        /**********Temperature Conversion******************
+         * 
+         */
 
 
 
@@ -666,6 +781,13 @@ module.exports =
 
             }
         },
+
+
+
+
+
+
+
 
 
 
@@ -718,6 +840,21 @@ module.exports =
         },
 
 
+    /************************Binary search************************************ 
+   * 13.Binary search
+  * **************************
+  * @purpose : Use Arrays to sort the word list and then do the binary search.
+ * @description:  Read in a list of words from File. Then prompt the user to 
+ * enter a word to search the list. The program reports if the search word 
+ * is found in the list.
+* @function : read in the list words comma separated from a File and then
+ enter the word to be searched
+ 
+        */
+
+
+
+
         getBinarySearch(arr, word) {
             arr.sort();
             var li = 0;
@@ -738,8 +875,31 @@ module.exports =
             return false;
         },
 
+/*****************************Vending Machine**************************
+ * 
+ * @purpose : Two Outputs - one the number of minimum Note needed to 
+ * give the change and second list of Rs Notes that would given in the Change.
+ * @description : There is 1, 2, 5, 10, 50, 100, 500 and 1000 Rs Notes which 
+ * can be returned by Vending Machine. Write a Program to calculate the
+ *  minimum number of Notes as well as the Notes to be returned by the
+ *  Vending Machine as a Change.
+ * @function :  Use Recursion and check for largest value of the Note 
+ * to return change to get to minimum number of Notes. 
 
-        countNotes(arr, amount) {
+
+
+ */
+
+
+
+
+
+
+
+
+
+        countNotes(arr, amount) 
+        {
             var notes = 0;
             for (let i = 0; i < arr.length; i++) {
                 if (amount / arr[i] >= 1) {
@@ -752,11 +912,22 @@ module.exports =
             console.log("total number of notes :" + notes);
         },
 
+/*****************************Square root**************************
+ * 
+ * @purpose : Write a static function sqrt  to compute the square root 
+ * of a nonnegative number c given in the input using Newton's method.
+ * @description :  initialize t = c
+- replace t with the average of c/t and t
+ * @function :  - repeat until desired accuracy reached using 
+ condition Math.abs(t - c/t) > epsilon*t where epsilon = 1e-15;
+
+
+ */
 
 
 
-
-        findRoot(number) {
+        findRoot(number)
+         {
             var temp = number;
             const epsilon = 1e-15;
             while (Math.abs(temp - number / temp) > epsilon * temp) {
@@ -764,6 +935,12 @@ module.exports =
             }
             console.log("Square root of number is " + temp);
         },
+
+        /***********************toBinary ******************************
+         * 15.toBinary
+         * 
+        */
+
 
 
 

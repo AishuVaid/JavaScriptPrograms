@@ -22,7 +22,7 @@ var name=require('readline-sync');
 /**
  * For User Input
  */
-var input=name.question("enter the input");
+var input=name.questionInt("enter the input");
 /**
  * taking the input
  */
