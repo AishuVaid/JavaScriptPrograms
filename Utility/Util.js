@@ -106,23 +106,48 @@ module.exports =
             }
         },
 
-        findHarmonicNumber(num) {
-            try {
+
+
+        /************************Harmonic number**************************
+         * 5.Harmonic number.
+         *  *@Purpose : Print the Nth Harmonic Value.
+        *@description :Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N.
+        *@function : compute 1/1 + 1/2 + 1/3 + ... + 1/N.
+
+         */
+
+        findHarmonicNumber(num) 
+        {
+            try 
+            {
                 var sum = 0, i = 0;
-                if (num != 0) {
-                    for (i = 1; i <= num; i++) {
+                if (num != 0) 
+                {
+                    for (i = 1; i <= num; i++) 
+                    {
                         sum += (1 / i);
                     }
                     console.log("harmonic value " + num + "=" + sum);
                 }
-                else {
+                else 
+                {
+
                     console.log("please enter the number");
                 }
             }
-            catch (e) {
+            catch (e) 
+            {
                 console.log(e.message);
             }
         },
+
+
+        /****************Prime Factors*********************
+         * 6.Prime Factors.
+         * @purpose : Print the prime factors of number N.
+         *@description : Computes the prime factorization of N using brute force.
+         @function : Traverse till i*i <= N instead of i <= N for efficiency.
+         */
 
 
         getPrimeFactors(number) {
@@ -311,16 +336,16 @@ module.exports =
         /******************StopWatch.js***************************
          * 13.StopWatch
          * @purpose :  Measure the elapsed time between start and end and print.
-         * 
+         * @description : Start the Stopwatch and End the Stopwatch.Measure the
+         *  elapsed time between start and end.
+         * @function : Print the elapsed time.
+
+
+
          */
 
-
-
-
-
-
-
-        getCurrentSecond() {
+        getCurrentSecond() 
+        {
             var dt = new Date();
             var sec = dt.getSeconds();
             return sec;
@@ -335,6 +360,16 @@ module.exports =
             console.log("The elapsed time is =" + Number(stop - start));
 
         },
+
+
+        /**********************Equation****************************
+         * 15.Quadratic.
+         * * @purpose :Write a program Quadratic.java to find the 
+         * roots of the equation a*x*x + b*x + c.
+         *  Since the equation is x*x, hence there are 2 roots. 
+         * @description :  The 2 roots of the equation can be found using a formula 
+         * @function : Take a, b and c as input values to find the roots of x.
+         */
 
 
         getEquation(a, b, c) {
@@ -362,9 +397,21 @@ module.exports =
 
 
 
+        /**************************WindChill**************************
+         * @purpose : Write a program WindChill.java that takes two 
+         * double command-line arguments t and v and prints the wind chill.
+         * @description : Given the temperature t (in Fahrenheit) and the
+         *  wind speed v (in miles per hour), the National Weather Service
+         *  defines the effective temperature (the wind chill).
+         * @function : Use Math.pow(a, b) to compute ab. 
 
 
-        getChill(t, v) {
+
+    
+         */
+
+          getChill(t, v) 
+          {
             var result = (35.74 + 0.6215) * t + (0.4275 * t - 35.75) * Math.pow(v, 0.16);
             console.log(result);
 
@@ -557,7 +604,18 @@ module.exports =
         /********************************DayOfWeek**************************************** 
          * 11.Day of week
          * ****************************
-         * @purpose : 
+         * @purpose : dayOfWeek static function that takes a date as input and prints
+         *  the day of the week that date falls on. Your program should take three
+         *  command-line arguments: m (month), d (day), and y (year).
+         * @description : For output print 0 for Sunday, 1 for Monday,
+         *  2 for Tuesday, and so forth. 
+         * @function : Use the following formulas, for the Gregorian 
+         * calendar (where / denotes integer division):
+                y0 = y − (14 − m) / 12
+                x = y0 + y0/4 − y0/100 + y0/400
+                m0 = m + 12 × ((14 − m) / 12) − 2
+                d0 = (d + x + 31m0 / 12) mod 7
+                                                                                                                                                                                                                                         
         */
 
 
