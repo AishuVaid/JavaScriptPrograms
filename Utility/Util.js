@@ -269,9 +269,11 @@ module.exports =
         getArray(row, cloumn, read) 
         {
             var arr = [];
-            for (let i = 0; i < row; i++) {
+            for (let i = 0; i < row; i++) 
+            {
                 arr.push([])
-                for (let j = 0; j < cloumn; j++) {
+                for (let j = 0; j < cloumn; j++) 
+                {
                     var element = read.question("Enter the array elements =");
                     arr[i][j] = element;
                 }
@@ -281,7 +283,7 @@ module.exports =
 
 
         /********************sum of integers is zero**************************
-         * 9.Sum of integers equal to 0
+         * 9.Sum of integers equal to 0.
          * @purpose : One Output is number of distinct triplets as well
          *  as the second output is to print the distinct triplets.
          * @description : A program with cubic running time.
@@ -405,6 +407,16 @@ module.exports =
             }
         },
 
+        /***********************String Permutation*********************
+         * 12.String permutation.
+         * @purpose : Check if the arrays returned by two string functions 
+         * are equal.
+         * @description : Write static functions to return all permutation 
+         * of a String using iterative method and Recursion method.
+         * @function : Use Recursive function.  
+
+         */
+
 
 
 
@@ -516,11 +528,13 @@ module.exports =
 
 
 
-        isPrime(num) {
+        isPrime(num) 
+        {
             if (num == 0 || num == 1)
                 return false;
 
-            for (let i = 2; i < num; i++) {
+            for (let i = 2; i < num; i++) 
+            {
                 if (num % i == 0)
                     return false;
             }
@@ -528,11 +542,14 @@ module.exports =
 
         },
 
-        primeNum() {
+        primeNum() 
+        {
             console.log("Prime number in the range 0 to 1000");
 
-            for (let i = 0; i <= 1000; i++) {
-                if (this.isPrime(i)) {
+            for (let i = 0; i <= 1000; i++) 
+            {
+                if (this.isPrime(i)) 
+                {
                     console.log(i);
                 }
             }
@@ -543,24 +560,34 @@ module.exports =
          * 3.isAnagramPalindrome
          * *************************
          * @purpose : to find the numbers that are anagram and palindrome.
-         * @description : Extend 
+         * @description : One string is an anagram of another if the second 
+         * is simply a rearrangement of the first. For example, 
+         * 'heart' and 'earth' are anagrams.Take a range of
+         *  0 - 1000 Numbers and find the Prime numbers in that range. 
+         * @function : find the prime numbers that are Anagram and Palindrome.
+
+
          */
 
 
-        isNumberPalindrome(num1) {
+        isNumberPalindrome(num1) 
+        {
             var str = "";
             num1 = num1 + "";
 
-            for (let i = 0; i < num1.length; i++) {
+            for (let i = 0; i < num1.length; i++) 
+            {
                 str = num1.charAt(i) + str;
             }
-            if (str == num1) {
+            if (str == num1) 
+            {
                 return true;
             }
             return false;
         },
 
-        isAnagramPalindrome() {
+        isAnagramPalindrome() 
+        {
             console.log("Prime numbers in the range of 0 to 1000 which are anagram");
             {
                 var arr = [];
@@ -574,14 +601,20 @@ module.exports =
                 }
 
 
-                for (let i = 0; i < arr.length; i++) {
-                    for (let j = i + 1; j < arr.length; j++) {
-                        if (this.CheckAnagram(arr[i], arr[j])) {
+                for (let i = 0; i < arr.length; i++) 
+                {
+                    for (let j = i + 1; j < arr.length; j++) 
+                    {
+                        if (this.CheckAnagram(arr[i], arr[j])) 
+                        {
                             console.log(arr[i] + " and " + arr[j] + " are anagram");
-                            if (this.isNumberPalindrome(arr[i])) {
+                            if (this.isNumberPalindrome(arr[i])) 
+                            {
                                 console.log(arr[i] + " is palindrome ");
                             }
-                            if (this.isNumberPalindrome(arr[j])) {
+
+                            if (this.isNumberPalindrome(arr[j])) 
+                            {
                                 console.log(arr[j] + " is palindrome ");
                             }
                         }
@@ -604,9 +637,12 @@ module.exports =
 
         sortByBubble(array) {
 
-            for (let a = 0; a < array.length; a++) {
+            for (let a = 0; a < array.length; a++) 
+            {
                 for (let b = a + 1; b < array.length; b++) {
-                    if (array[a] > array[b]) {
+
+                    if (array[a] > array[b]) 
+                    {
                         var temp = array[a];
                         array[a] = array[b];
                         array[b] = temp;
@@ -659,6 +695,23 @@ module.exports =
                 d0 = (d + x + 31m0 / 12) mod 7
                                                                                                                                                                                                                                          
         */
+
+        /***************Merge Sort*****************************
+         * 13.Merge Sort.
+         * @purpose : - Write a program with Static Functions to do 
+         * Merge Sort of list of Strings. 
+         * @description : To Merge Sort an array, we divide it
+         *  into two halves, sort the two halves independently,
+         *  and then merge the results to sort the full array. 
+         * To sort a[lo, hi), we use the following recursive strategy:
+           Base case: If the subarray length is 0 or 1, it is already sorted.
+           @function : compute mid = lo + (hi - lo) / 2, 
+           recursively sort the two subarrays a[lo, mid) and a[mid, hi), 
+            and merge them to produce a sorted result.
+
+
+
+         */
 
 
 
@@ -724,9 +777,25 @@ module.exports =
             }
         },
 
-        /*******************find day******************************
-         * 
-         */
+      
+
+
+           /********************************DayOfWeek**************************************** 
+         * 11.Day of week
+         * ****************************
+         * @purpose : dayOfWeek static function that takes a date as input and prints
+         *  the day of the week that date falls on. Your program should take three
+         *  command-line arguments: m (month), d (day), and y (year).
+         * @description : For output print 0 for Sunday, 1 for Monday,
+         *  2 for Tuesday, and so forth. 
+         * @function : Use the following formulas, for the Gregorian 
+         * calendar (where / denotes integer division):
+                y0 = y − (14 − m) / 12
+                x = y0 + y0/4 − y0/100 + y0/400
+                m0 = m + 12 × ((14 − m) / 12) − 2
+                d0 = (d + x + 31m0 / 12) mod 7
+                                                                                                                                                                                                                                         
+        */
 
 
 
@@ -752,7 +821,9 @@ module.exports =
         },
 
         /**********Temperature Conversion******************
-         * 
+         *12.Temperature Conversion.
+         @purpose : prints the day of the week that date falls on.
+         @description :   
          */
 
 
@@ -956,6 +1027,31 @@ module.exports =
                 num=num/2;
             }
             console.log("Binary value of given number= "+string);
+        },
+
+        bintoDecimal(num)
+        {
+            var sum=0;
+            var j=0;
+            for(let i=num.length-1;i>=0;i--)
+            {
+                sum=sum+(num.charAt[i]*Math.pow2,j);
+                j++;
+            }
+            console.log(sum);
+        },
+
+
+
+        convertBinary(num)
+        {
+            var string=this.toBinary(num);
+            string1=string.substring(0,4);
+            string2=string.substring(4,string.length);
+            var swap=string1+string2;
+            this.bintoDecimal(swap);
+            return swap;
         }
     }
+        
 
