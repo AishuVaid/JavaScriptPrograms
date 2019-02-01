@@ -1,4 +1,3 @@
-
 const readline = require('readline-sync');
 module.exports =
     {
@@ -15,6 +14,47 @@ module.exports =
          * @Since: 27-01-2019
          * 
          ******************************************************/
+
+
+         /**************Reading a file.******************
+          * @purpose : To read file from the path.
+          * @function : fileRead function reads the file snd splits it 
+          * by space and returns.
+          * 
+          /**
+           * require fs module in whcih readFile function is defined.
+           * */
+
+        fileRead()
+        {
+            var fileStream=require('fs');
+            var f=fileStream.readFileSync('sample.txt','utf8');
+            var arr=f.split(' ');
+            return arr;
+        },
+        /***********************************************
+         * @purpose : To write data into a file.
+         * @function : fileWrite function write the data to a file.
+         * @param : fileWrite function accepts fileName and data to be
+         * written.
+         * ***********************************************
+         */
+
+         fileWrite(fileName,data)
+         {
+             const fs=require('fs');
+             fs.writeFile(fileName,data,function(err)
+            {
+                if(err)
+                {
+                    return console.log(err);
+             }
+            })
+        },         
+
+
+
+
         /****************StringReplace********************** *
         * 1.StringReplace
         * *************************
@@ -26,7 +66,7 @@ module.exports =
         * **********************************************************/
         replaceString(username) 
         {
-            var input = "Hello <<UserName>>, How are you?";
+            var input = "Hello <<UserName>>, How are you?"
             var output1 = input.replace(/<<UserName>>/g, username);//Regex
             console.log(output1);
         },
@@ -44,7 +84,8 @@ module.exports =
         * @function: username takes the user name and prints the value
         * ***************************************************************** */
 
-        flipACoin(result) {
+        flipACoin(result) 
+        {
             var head = 0;//declare head variable
             var tail = 0;//declare tail variable
             var n = 0;
@@ -445,6 +486,102 @@ module.exports =
                 console.log(error.message);
             }
         },
+
+        /***************************************TicTacToe***************************
+     * 14.ticTac
+     * **********************************
+     * @purpose     : To play a Cross Game or Tic-Tac-Toe Game. Player 1 is the Computer and the
+     *                Player 2 is the user. Player 1 take Random Cell that is the Column and Row. 
+     * @param       : It accepts the input from the user and prints the result.
+     * @function    : Sum the number of times the count of heads and tails,calculate the percentage.
+     * *******************************************************************************/
+
+
+        intializeGame() {
+            var game = [];
+            for (let i = 0; i <= 2; i++) {
+                game.push([]);
+                for (let j = 0; j <= 2; j++)
+                    game[i][j] = '-';
+            }
+            return game;
+        },
+    
+        random() {
+            var value = Math.floor(Math.random() * 3);
+            console.log(value + 1);
+            return value;
+        },
+    
+        mark(game, x, y, value) {
+            if (game[x][y] == '-')
+                game[x][y] = value;
+            for (let i = 0; i <= 2; i++) {
+                var print = [];
+                for (let j = 0; j <= 2; j++)
+                    print[j] = game[i][j];
+                console.log(print);
+            }
+            return game;
+        }
+        ,
+        computerPlayer(game) {
+            var arr;
+            var flag = false;
+            while (flag == false) {
+                var x = this.random();
+                var y = this.random();
+                if (game[x][y] == '-') {
+                    arr = this.mark(game, x, y, 'O');
+                    flag = true;
+                }
+            }
+            return game;
+        }
+        ,
+        userPlayer(game) {
+            var flag = false;
+            while (flag == false) {
+                console.log("Enter the row value:");
+                let x = readline.questionInt('Enter the value of x within 1,2,3 : ') - 1;
+                let y = readline.questionInt('Enter the value of y within 1,2,3 : ') - 1;
+                if (game[x][y] == '-') {
+                    this.mark(game, x, y, 'X');
+                    flag = true;
+                }
+                else
+                    console.log("Please enter the correct choice");
+            }
+            return game;
+        }
+        ,
+        check(game) {
+            for (let i = 0; i <= 2; i++) {
+                if (game[i][0] == game[i][1] && game[i][1] == game[i][2]) {
+                    if (game[i][0] == 'O' || game[i][0] == 'X') {
+                        return true;
+                    }
+                }
+                if (game[0][i] == game[1][i] && game[1][i] == game[2][i]) {
+                    if (game[0][i] == 'O' || game[0][i] == 'X') {
+                        return true;
+                    }
+                }
+            }
+            var k = 0, l = 0;
+            if (game[k][k] == game[k + 1][k + 1] && game[k + 1][k + 1] == game[k + 2][k + 2]) {
+                if (game[0][0] == 'O' || game[0][0] == 'X') {
+                    return true;
+                }
+            }
+            if (game[l][l + 2] == game[l + 1][l + 1] && game[l + 1][l + 1] == game[l + 2][l]) {
+                if (game[0][0] == 'O' || game[0][0] == 'X') {
+                    return true;
+                }
+            }
+            return false;
+        },
+
     
    
 
