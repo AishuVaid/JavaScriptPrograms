@@ -13,7 +13,7 @@
  * @param :Create a Ordered Linked List having Numbers in ascending order. 
  */
 
- 
+
 var util = require('../Utility/DSUtility');
 var access = require('../Utility/Util');
 var read = require('readline-sync');
@@ -24,6 +24,9 @@ for (let i = 0; i < arr1.length; i++) {
     arr[i] = parseInt(arr1[i]);
 }
 access.mergeSort(arr)
+/**
+ * Invoking the merge sort method.
+ */
 console.log("After sort: "+arr);
 
 var L = new util.LinkedList;
@@ -52,7 +55,7 @@ try {
 
     }
 }
- catch (error) 
+ catch(error) 
 {
     console.log(error.message);
 

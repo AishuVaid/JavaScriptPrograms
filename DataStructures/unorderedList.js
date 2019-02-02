@@ -20,10 +20,9 @@ var arr=M.fileRead();
 var l=new access.LinkedList;
 for(let i=0;i<arr.length;i++)
 {
-    console.log(arr[i]);
     l.add(arr[i]);
 
-    console.log(l+"in main")
+    
 }
 var found=l.contain(word);
 if(found==true)
