@@ -23,7 +23,7 @@ console.log("before sort: "+arr1);
 for (let i = 0; i < arr1.length; i++) {
     arr[i] = parseInt(arr1[i]);
 }
-access.mergeSort(arr)
+access.sortByInsert(arr)
 /**
  * Invoking the merge sort method.
  */

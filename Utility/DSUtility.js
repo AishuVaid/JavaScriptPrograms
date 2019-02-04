@@ -12,8 +12,6 @@
     ******************************************************/
 var util = require('../Utility/Util')
 
-
-/
 class Node {
     constructor(data) {
         this.data = data;
@@ -29,11 +27,9 @@ class LinkedList {
 
     }
 
-
-
-
     add(data) {
-        var node = new Node(data);
+        var node
+        node = new Node(data);
         if (this.head == null) {
             this.head = node;
             this.size++;
@@ -89,12 +85,7 @@ class LinkedList {
             this.size++;
         }
     }
-
-
-
-
-    indexOf(count) 
-    {
+    indexOf(count) {
         var count = 0;
         var current = this.head;
         while (current != null) {
@@ -104,7 +95,6 @@ class LinkedList {
             current = current.next;
         }
     }
-
     print() {
         var str = "";
         var temp = this.head;
@@ -112,7 +102,7 @@ class LinkedList {
             str = str + " " + temp.data;
             temp = temp.next;
         }
-        console.log(str);
+        return str;
     }
 
 
@@ -220,181 +210,226 @@ class Stack {
 
 
 
-class Queue
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+
+    enqueue(data) {
+        this.items.push(data)
+    }
+    deEqueue() {
+        if (this.isEmpty())
+
+           return "UnderFlow";
+        return this.items.shift();
+    }
+    isEmpty() {
+        return this.items.length == 0;
+    }
+    printList() {
+        var str = "";
+        for (var i = 0; i < this.items.length; i++)
+            str += this.items[i] + " ";
+        return str;
+    }
+}
+
+
+
+
+/*********************Dequeue**************************** */
+
+class Dequeue {
+    constructor() {
+        this.items = []
+    }
+    addFront(data) {
+        /**
+         * Adds the data to first element.
+         */
+        this.items.unshift(data)
+    }
+    addRear(data) {
+        /**
+         * Adds the data to last element.
+         */
+        this.items.push(data)
+    }
+    removeFront() {
+        if (this.isEmpty())
+            return "underFlow"
+        /**
+         * Removes the first element.
+         */
+        return this.items.shift()
+    }
+    removeRear() {
+        /**
+         * Removes the top element.
+         */
+        return this.items.pop()
+    }
+    isEmpty() {
+        /**
+         * 
+         *return true if the queue is empty. 
+         * 
+         */
+        return this.items.length == 0;
+    }
+    /*palindromeChecker(str) 
+    {
+        for (let i = 0; i < str.length; i++) {
+            this.addRear(str.charAt(i));
+        }
+        while (this.front != this.rear && this.front < this.rear) {
+            if (this.getFront() != this.getRear()) {
+                console.log("not ..")
+                return false;
+            }
+            this.front++;
+            this.rear--;
+        }
+        return true;
+    }
+    **/
+
+}
+
+
+
+
+
+
+class QueueLinkedList
 {
     constructor()
     {
-       this.items=[];
+        this.size=0;
+        this.head=null;
     }
-    
     enqueue(data)
     {
-        this.items.push(data)
-    }
-    deEqueue()
-    {
-        if(this.isEmpty())
-        
-            return "UnderFlow";
-            return this.items.shift();
-    }
-        isEmpty()
+        var n=new Node(data);
+        if(this.head==null)
         {
-            return this.items.length==0;
+            this.head=n;
+            this.size++;
         }
-        printList()
+        else
+        {
+            var temp=this.head;
+            while(temp.next)
+            {
+                temp=temp.next;
+            }
+            temp.next=n;
+            this.size++;
+        }
+    }
+    dequeue()
+    {
+        if(this.head==null)
+        {
+            console.log("Stack underflow");
+            return null;
+        }
+        else
+        {
+            var temp=this.head;
+            var data=temp.data;
+            this.head=temp.next;
+            this.size--;
+            return data;
+        }
+    }
+    getSize()
+    {
+        return this.size;
+
+    }
+    print()
         {
             var str="";
-            for(var i=0;i<this.items.length;i++)
-        str+=this.items[i]+" ";
-        return str;      
-      }
-    }
+            var temp=this.head;
+            while(temp)
+            {
+                console.log(temp.data);
+                str=str+""+temp.data;
+                temp=temp.next;
+            }
+            return str;
+
+        }
 
 
 
-
-    /*********************Dequeue**************************** */
-
-    class Dequeue {
-        constructor() {
-            this.front = -1;
-            this.rear = 0;
-            this.size = 30;
-            this.arr = new Array(30);
+    palindromeChecker(str) 
+    {
+        for (let i = 0; i < str.length; i++) {
+            this.addRear(str.charAt(i));
         }
-        isFull(){
-            if(this.front==0 && this.rear==this.size-1 || (this.rear+1==this.front)){
-                return true;
+        while (this.front != this.rear && this.front < this.rear) {
+            if (this.getFront() != this.getRear()) {
+                return false;
             }
-            return false;
+            this.front++;
+            this.rear--;
         }
-        isEmpty(){
-            return this.front==-1;
-        }
-        addFront(item) {
-            if(this.isFull()){
-                console.log("Queue overflow");
-                return;
-            }
-            if(this.front==-1){
-                this.front=0;
-                this.rear=0;
-            }
-            else if(this.front==0){
-                this.front=this.arr.length-1;
-            }
-            else{
-                this.front--;
-            }
-            this.arr[this.front]=item;
-        }
-        addRear(item){
-            if(this.isFull()){
-                console.log("Queue overflow");
-                return;
-                
-            }
-            if(this.front==-1){
-                this.front=0;
-                this.rear=0;
-            }
-            else if(this.front==this.arr.length-1){
-                this.rear=0;
-            }
-            else{
-                this.rear++;
-            }
-            this.arr[this.rear]=item;
-        }
-        removeFront() {
-            if(this.isEmpty()){
-                console.log("Queue underflow");
-                return;
-                
-            }
-            var item;
-            if(this.front==this.rear){
-                item=this.arr[this.front];
-                this.front=-1;
-                this.rear=-1;
-            }
-            else if(this.front==this.arr.length-1){
-                item=this.arr[this.front];
-                this.front--;
-            }
-            else{
-                item=this.arr[this.front];
-                this.front++;
-            }
-            return item;
-        }
-        removeRear() {
-            if(this.isEmpty()){
-                console.log("Queue underflow");
-                return;
-                
-            }
-            var item;
-            if(this.arear==this.front){
-                item=this.arr[this.rear];
-                this.rear=-1;
-                this.front=-1;
-            }
-            else if(this.rear==0){
-                item=this.arr[this.rear];
-                this.rear=this.rear--;
-            }
-            return item;
-            }
-            getFront(){
-                if(this.isEmpty()){
-                    return -1;
-                }
-                return this.arr[this.front];
-            }
-            getRear(){
-                if(this.isEmpty()){
-                    return -1;
-                }
-                return this.arr[this.rear];
-            }
-       palindromeChecker(str){
-           for(let i=0;i<str.length;i++){
-               this.addRear(str.charAt(i));
-           }
-           while(this.front!=this.rear && this.front<this.rear){
-               if(this.getFront()!=this.getRear()){
-                   return false;
-               }
-               this.front++;
-               this.rear--;
-           }
-           return true;
-       }
+        return true;
     }
     
-
-    module.exports = {Node,LinkedList,Stack,Queue,Dequeue,
-
+}
 
 
-        /*******************Binary Tree***************************/
+
+module.exports = {
+    Node,LinkedList, Stack, Queue, Dequeue,QueueLinkedList,
 
 
-    getBinaryTree(num)
-    {
-        var fact=1;
-        for(let i=1;i<=num;i++)
-        {
-            fact=fact*i;
+
+
+    getBinaryTree(num) {
+        var fact = 1;
+        for (let i = 1; i <= num; i++) {
+            fact = fact * i;
         }
         return fact;
     },
 
-    
 
+    isPrime(initial,final)
+    {
+        var flag=0;
+        k=0;
+        var prime=[];
+
+        for(var index1=initial;index1<=final;index1++)
+        {
+            for(var index2=2;index2<index1;index2++)
+            {
+                if(index1%index2==0)
+                {
+                    flag=0;
+                    break;
+                }
+                else
+                {
+                    flag=1;
+                }
+            }
+            if(flag==1)
+            {
+                prime[k++]=index1;
+            }
+        }
+        return prime;
     }
+}
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+
+
+

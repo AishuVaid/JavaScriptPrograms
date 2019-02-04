@@ -2,16 +2,15 @@ var Access=require('../Utility/Util');
 var read=require('readline-sync');
 var num=read.questionInt("Enter the size of array :");
 var arr=[];
-while(num!=arr.length)
+while(i<num)
 {
     var number=read.questionInt("enter the array elements :");
     arr.push(number)
+    i++;
 }
-var l=0;
-var h=arr.length;
-function Merge()
-{
-    Access.mergeSort(arr);
-    console.log("Merge sorted result =",arr);
-}
-Merge();
+console.log("Before sorting");
+console.log(arr);
+
+console.log("After sorting");
+var result=Access.mergeSort(arr);
+console.log(result);

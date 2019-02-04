@@ -43,7 +43,7 @@ module.exports =
          fileWrite(fileName,data)
          {
              const fs=require('fs');
-             fs.writeFile(fileName,data,function(err)
+             fs.writeFile(fileName,data ,function(err)
             {
                 if(err)
                 {
@@ -852,69 +852,65 @@ module.exports =
 
 
 
+/******************mergeSort******************** */
 
-        mergeSort(res)
+    /**
+     * 6.Takes the array as an input and sorts it in the ascending order
+     * 
+     * 
+     * @description:​ To Merge Sort an array, we divide it into two halves, sort the two halves
+        independently, and then merge the results to sort the full array
+     * 
+     * @purpose :to sort an array
+     * 
+     * @function:mergesort divides the array into halves, toMerge merges the divided array into sorted array
+     */
+    mergeSort(arr)
+    {
+       if(arr.length<=1)
         {
-            var n=res.length;
+          return arr;
+        }
+        
+      var mid=Math.floor(arr.length/2);
+      var left=arr.slice(0,mid);
+      var right=arr.slice(mid);
+      var left=this.mergeSort(left);
+      var right=this.mergeSort(right);
 
-            if(n<2)
-            {
-                return;
-
-            }
-            var mid=Math.floor(n/2);
-            var left=[mid];
-            var right=[n-mid];
-            for(let i=0;i<mid;i++)
-            {
-                left[i]=res[i];
-            }
-            for(j=mid;j<n;j++)
-            {
-                right[j-mid]=res[j];
-            }
-            this.mergeSort(left);
-            this.mergeSort(right);
-            this.mergeSort(left,right,res);
-
-        },
-
-        merge(arr,brr,crr)
+      return this.toMerge(left,right);
+    },
+    
+    toMerge(left,right)
+    {
+        var result=[];
+        var li=0;
+        var ri=0;
+        while(li<left.length && ri<right.length)
         {
-            var i=0;
-            var j=0;
-            var k=0;
-            while(i<arr.length && j<brr.length)
-            {
-                if(arr[i]<=brr[j])
-                {
-                    crr[k]=arr[i]
-                    i++;
-                }
-                else
-                {
-                 crr[k]=brr[j];
-                  j++;
-                 
-                 }
-                 while(i<arr.length)
-                 {
-                     crr[k]=arr[i];
-                     i++;
-                     k++;
-
-                 }
-                 while(j<brr.length)
-                 {
-                     crr[k]=brr[j];
-                     j++;
-                     k++;
-                 }
-                 return crr;
-            }
-        },
-
-      
+          if(left[li]>right[ri])
+          {
+            result.push(right[ri]);
+            ri++;
+          }
+          else
+          {
+            result.push(left[li]);
+            li++;
+           }
+        }
+        while(li<left.length)
+        {
+          result.push(left[li]);
+          li++;
+        }
+        while(ri<right.length)
+        {
+            result.push(right[ri]);
+            ri++;
+        }
+    return result;
+    },
 
 
            /********************************DayOfWeek**************************************** 
@@ -1185,10 +1181,11 @@ module.exports =
             var string=this.toBinary(num);
             string1=string.substring(0,4);
             string2=string.substring(4,string.length);
-            var swap=string1+string2;
+            var swap=string2+string1;
             this.bintoDecimal(swap);
             return swap;
         }
+    
     }
         
 

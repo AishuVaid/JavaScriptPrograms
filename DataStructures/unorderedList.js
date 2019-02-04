@@ -12,30 +12,27 @@
  * @since : 30-01-2019.
 
  ******************************************************************/
-var access=require('../Utility/DSUtility');
-var M=require('../Utility/Util');
-var read=require('readline-sync');
-var word=read.question("enter word to be searched in file:");
-var arr=M.fileRead();
-var l=new access.LinkedList;
-for(let i=0;i<arr.length;i++)
-{
+var access = require('../Utility/DSUtility');
+var M = require('../Utility/Util');
+var read = require('readline-sync');
+var word = read.question("enter number to be searched in file:");
+var arr = M.fileRead();
+var l = new access.LinkedList;
+for (let i = 0; i < arr.length; i++) {
     l.add(arr[i]);
 
-    
+
 }
-var found=l.contain(word);
-if(found==true)
-{
+var found = l.contain(word);
+if (found == true) {
     l.remove(word);
-    var output=l.print();
-M.fileWrite('sample.txt',output);
-console.log(output)
+    var output = l.print();
+    M.fileWrite('sample.txt', output);
+    console.log(output)
 }
-else
-{
+else {
     l.add(word);
-    var out=l.print();
-    M.fileWrite('sample.txt',out);
+    var out = l.print();
+    M.fileWrite('sample.txt', out);
     console.log(out)
 }

@@ -31,7 +31,7 @@ function ticTacToe() {
             break;
         }
         if (flag) {
-            console.log("TOO BAD THE COMPUTER WON!BETTER LUCK NEXT TIME!!");
+            console.log("YOU LOSTT!!");
             break;
         }
         else if (count == 8) {
@@ -45,7 +45,7 @@ function ticTacToe() {
 
         }
         if (flag) {
-            console.log("OH MY GODDDD!!!YOU WONNNNNNNN!!!");
+            console.log("YOU WONN!!!");
             break;
         }
         count++;
