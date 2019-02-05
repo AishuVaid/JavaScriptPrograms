@@ -19,9 +19,8 @@ const readline = require('readline-sync');
 function ticTacToe() {
     var flag = false;
     var arr = utility.intializeGame();
-    console.log("Player 1 : Computer, Symbole : O");
-    console.log("Player 2 : You, Symbole : x");
-    console.log("Winning isn't everything, but wanting to win is...");
+    console.log("Player 1 : Computer, Symbol : O");
+    console.log("Player 2 : You, Symbol : x");
     var count = 1;
     while (count <= 9) {
         arr = utility.computerPlayer(arr);

@@ -119,13 +119,16 @@ module.exports =
             if (year > 999) {
                 if ((year % 4 == 0) || (year % 400 == 0) || (year % 100 == 0)) {
                     console.log("It is a leap year!!");
+                    return true;
                 }
                 else {
                     console.log("It's not a leap year");
+                    return false;
                 }
             }
             else {
                 console.log("Enter a valid year");
+                return false;
             }
 
         },
@@ -865,53 +868,86 @@ module.exports =
      * 
      * @function:mergesort divides the array into halves, toMerge merges the divided array into sorted array
      */
-    mergeSort(arr)
-    {
-       if(arr.length<=1)
-        {
-          return arr;
-        }
-        
-      var mid=Math.floor(arr.length/2);
-      var left=arr.slice(0,mid);
-      var right=arr.slice(mid);
-      var left=this.mergeSort(left);
-      var right=this.mergeSort(right);
-
-      return this.toMerge(left,right);
-    },
-    
-    toMerge(left,right)
-    {
-        var result=[];
-        var li=0;
-        var ri=0;
-        while(li<left.length && ri<right.length)
-        {
-          if(left[li]>right[ri])
-          {
-            result.push(right[ri]);
-            ri++;
+    merge(left, right, arr) {
+        try {
+          var i = 0;
+          var j = 0;
+          var k = 0;
+          /**
+           *merge elements into arr[]
+           */
+          while (i < left.length && j < right.length) {
+            if (left[i] <= right[j]) {
+              arr[k] = left[i];
+              i++;
+            } else {
+              arr[k] = right[j];
+              j++;
+            }
+            k++;
           }
-          else
-          {
-            result.push(left[li]);
-            li++;
-           }
+          /**
+           * if left[] is greater than right[], push all left[] into arr[]
+           */
+          while (i < left.length) {
+            arr[k] = left[i];
+            i++;
+            k++;
+          }
+          /**
+           * if left[] is lesser than right[], push all right[] into arr[]
+           */
+          while (j < right.length) {
+            arr[k] = right[j];
+            j++;
+            k++;
+          }
+          return arr;
+        } catch (error) {
+          console.log(error.message);
         }
-        while(li<left.length)
-        {
-          result.push(left[li]);
-          li++;
+      },
+      mergeSort(arr) {
+        try {
+          var n = arr.length;
+          /**
+           * if size is less than 2 return that.
+           */
+          if (n < 2) {
+            return;
+          }
+          /**
+           * calculate mid value
+           */
+          var mid = Math.floor(n / 2);
+          var left = [mid];
+          var right = [n - mid];
+          /**
+           * store  elements in left array which are present before the mid
+           */
+          for (let i = 0; i < mid; i++) {
+            left[i] = arr[i];
+          }
+          /**
+           * store  elements in left array which are present before the mid
+           */
+          for (let j = mid; j < n; j++) {
+            right[j - mid] = arr[j];
+          }
+          /**
+           * call mergesort for left half
+           */
+          this.mergeSort(left);
+          /**
+           * call mergesort for left half
+           */
+          this.mergeSort(right);
+          this.merge(left, right, arr);
+        } catch (error) {
+          console.log(error.message);
         }
-        while(ri<right.length)
-        {
-            result.push(right[ri]);
-            ri++;
-        }
-    return result;
-    },
-
+      },
+    
 
            /********************************DayOfWeek**************************************** 
          * 11.Day of week
@@ -939,8 +975,9 @@ module.exports =
             var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
             var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
             var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
+            return d0;
 
-            switch (d0) {
+            /*switch (d0) {
                 case 0: return "Sunday";
                 case 1: return "Monday";
                 case 2: return "Tuesday";
@@ -949,7 +986,7 @@ module.exports =
                 case 5: return "Friday";
                 case 6: return "Saturday";
 
-            }
+            }*/
 
         },
 

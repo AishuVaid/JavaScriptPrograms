@@ -14,7 +14,7 @@ function hashing() {
         var n = Number(numArray[i]);
        var remainder = n % 10;
         
-        if (arr[remainder] === undefined) {
+        if (arr[remainder] == undefined) {
             arr[remainder] = new access.LinkedList;
             arr[remainder].add(n);
         } else {
@@ -26,7 +26,7 @@ function hashing() {
     for (let index = 0; index < 10; index++) {
         take.print(index + " slot: ");
         try {
-            console.log(arr[index].printList());
+            console.log(arr[index].print());
         } catch (err) {
             console.log("empty index");
         }
@@ -45,7 +45,7 @@ function hashing() {
         remainder = Number(number % 10);
         console.log("Remainder is "+remainder);
         
-        if (arr[remainder] === undefined) {
+        if (arr[remainder] == undefined) {
             arr[remainder] = new access.LinkedList;
         }
         if (arr[remainder].contain(Number(number))) {
@@ -62,8 +62,8 @@ function hashing() {
             flag = true;
             take.print(index + " result slot: ");
             try {
-                console.log(arr[index].printList());
-                str = str + arr[index].printList();
+                console.log(arr[index].print());
+                str = str + arr[index].print();
             } catch (err) {
                 console.log("Empty index");
             }

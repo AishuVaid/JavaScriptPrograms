@@ -15,7 +15,7 @@
 var access = require('../Utility/DSUtility');
 var M = require('../Utility/Util');
 var read = require('readline-sync');
-var word = read.question("enter number to be searched in file:");
+var word = read.question("enter word to be searched in file:");
 var arr = M.fileRead();
 var l = new access.LinkedList;
 for (let i = 0; i < arr.length; i++) {
