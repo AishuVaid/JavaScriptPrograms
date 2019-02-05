@@ -58,7 +58,7 @@ function hashing() {
         }
         var flag;
         
-        for (let index = 0; index < 10; index++) {
+        for (let index = 0; index < 11; index++) {
             flag = true;
             take.print(index + " result slot: ");
             try {

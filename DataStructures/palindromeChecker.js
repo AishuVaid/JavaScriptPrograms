@@ -6,8 +6,9 @@
  * 
  *
  *@file          :palindromeChecker.js
- *@overview      :palindromeChecker A palindrome is a string that reads the same forward and backward,it should appear same then the string is palindrome.
- *@author name   :Anush Kumar s k <anushk136@gmail.com>
+ *@overview      :palindromeChecker A palindrome is a string that reads 
+ the same forward and backward,it should appear same then the 
+ string is palindrome.
  *@version       :1.0
  *@since         :02/02/2019
  * 

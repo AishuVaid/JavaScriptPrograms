@@ -38,7 +38,7 @@ function Queue() {
         /**
          * Loop the number of size of people to deposit and withdraw amount.
          */
-        for (let i = 1; i < size; i++) {
+        for (let i = 1; i <= size; i++) {
             var input = read.question("Enter 1 deposit amount :\nEnter 2 to withdraw amount :")
             if (input == 1) {
                 var amount = read.questionFloat("Enter the total amount to deposit :")
@@ -47,8 +47,11 @@ function Queue() {
             }
             else if (input == 2) {
                 var amount = read.questionInt("Enter the total amount to be withdraw :")
-                var get = L.enqueue(Number(-amount))
+                if ( amount<=bankamnt)
+                {
+                L.enqueue(Number(-amount))
                 flag = true;
+                }
             }
             else {
                 console.log("Make sure that you have entered correct key ");
@@ -72,9 +75,15 @@ function Queue() {
         for (let i = 1; i < size; i++) {
             add = add + L.deEqueue();
         }
-        console.log(add);
+       // console.log(add);
         var totalamount = bankamnt + add;
+        if(add>0)
+        {
         console.log("Total amount left in bank is :" + totalamount);
+        }
+        else{
+            console.log("Insufficent Balance ")
+        }
         if (totalamount < bankamnt) {
             console.log("Minimum cash is not maintained in bank:");
         }

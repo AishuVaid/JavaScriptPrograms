@@ -353,7 +353,7 @@ class Dequeue {
 }
 
 
-
+/*********************************Queue LinkedList*********************** */
 
 
 
@@ -381,7 +381,7 @@ class QueueLinkedList {
     }
     pop() {
         if (this.isEmpty()) {
-            console.log('no elemets found')
+            console.log('no elements found')
             return;
         }
         var dat = this.front.data
@@ -424,6 +424,9 @@ class QueueLinkedList {
     }
 }
 
+
+
+/**************************Stack LinkedList***************** */
 
 
 
@@ -499,6 +502,13 @@ class StackLinkedList {
         return st;
     }
 }
+
+
+
+/*******************************Queue1****************************** */
+
+
+
 
 class Queue1
 {

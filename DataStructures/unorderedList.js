@@ -19,6 +19,7 @@ var word = read.question("enter word to be searched in file:");
 var arr = M.fileRead();
 var l = new access.LinkedList;
 for (let i = 0; i < arr.length; i++) {
+    
     l.add(arr[i]);
 
 

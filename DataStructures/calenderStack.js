@@ -11,7 +11,7 @@
  * 
  * @file        :   calenderStack.js
  * @overview    :   take input month and year from the user and print calender
- * @author      :   Vishal C <iamvishal96gmail.com>
+ * @author      :   Aishwarya RM <aishu.vaid@gmail.com>
  * @version     :   1.0
  * @since       :   1-02-2019
  * 

@@ -10,7 +10,7 @@
  * 
  * @file        :   primeAddAnagram.js
  * @overview    :   Find the prime numbers within the range and display.
- * @author      :   Aishwarya RM <aishu.vaid@gmail.com>
+ * @author      :   Aishwarya <aishu.vaid@gmail.com>
  * @version     :   1.0
  * @since       :   04-02-2019
  * 
@@ -18,7 +18,7 @@
 /**
  * import the Utility class to use the functionalities.
  */
-var access = require('../Utility/DSUtility');
+var utility = require('../Utility/DSUtility');
 var M = require('../Utility/Util');
 var T=require('util')
 var readline = require('readline-sync');
@@ -73,7 +73,7 @@ for (let prime = 2; prime <= 1000; prime++) {
         }
     }
 }
-var arr=access.findArray();
+var arr=utility.findArray();
 console.log("The prime numbers that are not Anagram presents in the given range ");
 for (var i = 0; i < array.length; i++) {
     for (var j = 0; j < array[i].length; j++) {
