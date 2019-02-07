@@ -1,0 +1,61 @@
+{
+    "Rice" : [
+        {
+            "name" : "Basmati",
+            "weight" : 5,
+            "rate" : 80
+        },
+        {
+            "name" : "Red rice",
+            "weight" : 15,
+            "rate" : 90
+        },
+        {
+            "name" : "Brown rice",
+            "weight" : 10,
+            "rate" : 70
+        }
+    ],
+
+    "Pulses":[
+        {
+            "name" : "lentil",
+            "weight" : 2,
+            "rate" : 45
+        },
+
+        {
+            "name" : "black gram",
+            "weight" : 3,
+             "rate" : 40
+        },
+        {
+           "name" : "peas",
+           "weight" : 5,
+           "rate" : 50
+        }
+    ],
+
+    
+    "Wheat" :[
+        {
+            "name" : "annapurna",
+            "weight" : 10,
+            "rate" : 40
+        },
+        {
+            "name" : "ashirvaad",
+            "weight" : 8,
+            "rate" : 55
+        },
+        {
+            "name" : "pillsbury",
+            "weight" : 8,
+            "rate" : 60
+        }
+    ]
+
+
+}
+
+ 

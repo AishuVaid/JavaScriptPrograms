@@ -1,0 +1,30 @@
+{
+    "Stock":[
+        {
+            "name" : "bridgelabz",
+            "share" : 50,
+            "price" : 10000
+
+        },
+
+        {
+            "name" : "google",
+            "share" : 60,
+            "price" : 5000
+        },
+
+        {
+            "name" : "amazon",
+            "share" : 50,
+            "price" :4000
+
+        },
+
+        {
+            "name" : "tcs",
+            "share" : 50,
+            "price" : 8000
+            
+        }
+    ]
+}
