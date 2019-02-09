@@ -61,6 +61,9 @@ class LinkedList {
             return false;
         }
     }
+
+
+
     insertAt(element, index) {
         if (index > 0 && index > this.size)
             return false;
@@ -146,7 +149,7 @@ class LinkedList {
 }
 
 
-/***************************Stack implementation*******************
+/***************************Stack implementation********************
  * 
  */
 

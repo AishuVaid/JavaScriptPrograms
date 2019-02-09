@@ -22,4 +22,4 @@ for(let a=0;a<arrayLength;a++)
     var num=input.questionInt("Enter the value");
     array.push(num);
 }
-read.BubbleSort(array);
+read.sortByBubble(array);

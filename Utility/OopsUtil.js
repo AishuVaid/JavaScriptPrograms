@@ -1,3 +1,27 @@
+
+/*************************************************
+    *Purpose :to deploy all the business logic
+    *
+    * @description
+    * @file :OopsUtil.js
+    * @overview : All the business logic is coded here.
+    * @author : Aishwarya.R.M.
+    * @version :1.0
+    * @Since: 07-02-2019.
+    * 
+    ******************************************************/
+
+      /****************Stock Report***********************
+        * 1.Stock Report.
+        * *************************
+        * @purpose :  Print the Stock Report.
+        * @description :  Write a program to read in Stock Names,
+        *  Number of Share, Share Price. Print a Stock Report with
+        *  total value of each Stock and the total value of Stock.
+        * @function:Calculate the value of each stock and the total value.
+        * **********************************************************/
+
+
 var read=require('readline-sync');
 var file=require('fs');
 
@@ -17,6 +41,19 @@ class Stock
         return sum;
     }
 }
+
+
+     /*********JSON Inventory Data Management of Rice, Pulses and Wheats**************
+        * 1.JSON Inventory Data Management of Rice, Pulses and Wheats.
+        * *************************
+        * @purpose : Create the JSON from Inventory Object and output the JSON String.
+        * @description : Create a JSON file having Inventory Details for Rice, 
+        * Pulses and Wheats with properties name, weight, price per kg. 
+        * @function: Create a JSON file having Inventory Details for Rice, 
+        * Pulses and Wheats with properties name, weight, price per kg. 
+        * **********************************************************/
+
+
 
 
 class Rice
@@ -60,6 +97,27 @@ class Rice
         return this.weight*this.price;
     }
 }
+
+
+ /****************Inventory Management Program***********************
+        * 1.Inventory Management Program.
+        * *************************
+        * @purpose : Create the JSON from Inventory Object and output the JSON String.
+        * @description :Extend the above program to Create InventoryManager to
+        *  manage the Inventory. The Inventory Manager will use InventoryFactory
+        *  to create Inventory Object from JSON. The InventoryManager will 
+        * call each Inventory Object in its list to calculate the Inventory 
+        * Price and then call the Inventory Object to return the JSON String. 
+        * The main program will be with InventoryManager.
+        * @function: Get JSON Object in Java or NSDictionary in iOS. 
+        * Create Inventory Object from JSON. Calculate the value for every Inventory. 
+        * **********************************************************/
+
+
+
+
+
+
 
 class inventoryManage
 {
@@ -127,11 +185,33 @@ edit(data)
     stock[value2].price=name3;
     var d=file.writeFileSync('inventoryManage.json',JSON.stringify(data))
 }
-
 }
+
+
+  
+  
 module.exports={Stock,Rice,Wheat,Pulses,inventoryManage,
 
 
+
+      /****************Regular Expression Demonstration.********************** *
+        * 1.Regular Expression Demonstration.
+        * *************************
+        * @purpose : Print the Modified Message.
+        * @description : Read in the following message: Hello <<name>>,
+        *  We have your full name as <<full name>> in our system. 
+        * your contact number is 91-xxxxxxxxxx. 
+        * Please,let us know in case of any clarification Thank you 
+        * BridgeLabz 01/01/2016. Use Regex to replace name, full name,
+        *  Mobile#, and Date with proper value.
+        * @function: Logic -> Use Regex to do the following
+               Replace <<name>> by first name of the user (assume you are the user)
+               replace <<full name>> by user full name.
+               replace any occurance of mobile number that should be in
+              format 91-xxxxxxxxxx by your contact number.
+              replace any date in the format XX/XX/XXXX by current date.
+
+        *  **********************************************************/
 
  
 

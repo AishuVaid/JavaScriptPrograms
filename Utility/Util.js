@@ -114,19 +114,24 @@ module.exports =
         * @function: Print the year is a Leap Year or not.
          * ***************************************************************** */
 
-        checkLeapYear(year) {
+        checkLeapYear(year) 
+        {
 
-            if (year > 999) {
-                if ((year % 4 == 0) || (year % 400 == 0) || (year % 100 == 0)) {
+            if (year > 999) 
+            {
+                if ((year % 4 == 0) || (year % 400 == 0) || (year % 100 == 0)) 
+                {
                     console.log("It is a leap year!!");
                     return true;
                 }
-                else {
+                else 
+                {
                     console.log("It's not a leap year");
                     return false;
                 }
             }
-            else {
+            else 
+            {
                 console.log("Enter a valid year");
                 return false;
             }
