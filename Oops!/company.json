@@ -1,0 +1,27 @@
+{
+    "Comapny" :
+    [
+        {
+            "name" : "TCS",
+            "Symbol" : "T",
+            "share" : 5,
+            "Price" :400
+        },
+
+        {
+
+            "name" : "SRS",
+            "Symbol" : "S",
+            "share" : 3,
+            "Price" :300
+
+        },
+        {
+
+            "name" : "VRL",
+            "Symbol" : "V",
+            "share" : 5,
+            "Price" :200
+        }
+    ]
+}

@@ -793,8 +793,7 @@ module.exports =
                         array[b] = temp;
                     }
                 }
-            }
-            console.log("Sorted elements are " + array);
+            }return array;
         },
 
         /***********************************Insertion sort*************************************

@@ -1,0 +1,52 @@
+{
+    "Person": [
+        {
+            "Name": "Aishwarya",
+            "Last Name": "RM",
+            "Address": {
+                "Street": "23",
+                "City": "Bangalore",
+                "State": "Karnataka",
+                "Nationality": "Indian",
+                "Zip": "573201",
+                "PhoneNum": "7411487048"
+            }
+        },
+        {
+            "Name": "AnnoyingSweetlyBhavana",
+            "Last Name": "B",
+            "Address": {
+                "Street": "24",
+                "City": "Bangalore",
+                "State": "Karnataka",
+                "Nationality": "Indian",
+                "Zip": "573202",
+                "PhoneNum": "7795768374"
+            }
+        },
+        {
+            "Name": "Laxmi",
+            "Last Name": "K",
+            "Address": {
+                "Street": "21",
+                "City": "Bangalore",
+                "State": "Karnataka",
+                "Nationality": "Indian",
+                "Zip": "573203",
+                "PhoneNum": "9482011348"
+            }
+        },
+        {
+            "Name": "Deepthi",
+            "Last Name": "V",
+            "Address": {
+                "Street": "20",
+                "City": "Bangalore",
+                "State": "Karnataka",
+                "Nationality": "Indian",
+                "Zip": "573209",
+                "PhoneNum": "9482018546"
+            }
+        }
+    ]
+}

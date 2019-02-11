@@ -8,7 +8,7 @@
  * 
  * @overview : read in the list ints. 
 
-   * @author : Aishwarya RM <aishu.vaid@gmail.com>
+ * @author : Aishwarya RM <aishu.vaid@gmail.com>
  * @version : 1.0
  * @since : 28-01-2019
  *******************************************************/

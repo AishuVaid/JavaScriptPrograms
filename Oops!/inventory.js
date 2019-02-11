@@ -1,3 +1,13 @@
+/*******JSON Inventory Data Management of Rice, Pulses and Wheats ****************
+ * 
+ * 8.JSON Inventory Data Management of Rice, Pulses and Wheats.
+ * @purpose :  Create the JSON from Inventory Object and output the JSON String. 
+ * @description :  Create a JSON file having Inventory Details for Rice, 
+ * Pulses and Wheats with properties name, weight, price per kg. 
+* @function :  Get JSON Object in Java or NSDictionary in iOS. 
+Create Inventory Object from JSON. Calculate the value for every Inventory. 
+*******************************************************/
+
 var fileStream=require('fs');
 var UtilityOops=require('../Utility/OopsUtil');
 var input=fileStream.readFileSync('inventory.json');

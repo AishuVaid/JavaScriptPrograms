@@ -1,4 +1,16 @@
-//const read=require('readline-sync')
+/****************************************************************************
+ * Execution : default node : cmd> node stock.js
+ * 
+ * Purpose : Print the Stock Report.
+ * 
+ * @description
+ * @overview : Write a program to read in Stock Names, Number of Share,
+ *  Share Price. Print a Stock Report with total value of each Stock 
+ * and the total value of Stock.
+ * @author : Aishwarya RM <aishu.vaid@gmail.com>
+ * @version : 1.0
+ * @since : 28-01-2019
+ * ***************************************************************************/
 const util=require('../Utility/OopsUtil');
 const fileStream=require('fs')
 const json=fileStream.readFileSync('stock.json')
