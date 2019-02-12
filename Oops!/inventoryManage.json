@@ -1,1 +1,54 @@
-{"Stock":[{"shareName":"XEROX","noOfShares":150,"price":260},{"shareName":"LCH","noOfShares":190,"price":300},{"shareName":"CTS","noOfShares":250,"price":300},{"shareName":"zam","noOfShares":150,"price":260},{"shareName":"dsa","noOfShares":"100","price":100},{"shareName":"abc","noOfShares":"122","price":230},{"shareName":"tcs","noOfShares":45,"price":52565},{"shareName":"tcs","noOfShares":54126,"price":2133225},{"shareName":"acc","noOfShares":23,"price":233}]}
+{
+    "Stock": [
+        {
+            "shareName": "XEROX",
+            "noOfShares": 150,
+            "price": 260
+        },
+        {
+            "shareName": "LCH",
+            "noOfShares": 190,
+            "price": 300
+        },
+        {
+            "shareName": "CTS",
+            "noOfShares": 250,
+            "price": 300
+        },
+        {
+            "shareName": "zam",
+            "noOfShares": 150,
+            "price": 260
+        },
+        {
+            "shareName": "dsa",
+            "noOfShares": "100",
+            "price": 100
+        },
+        {
+            "shareName": "abc",
+            "noOfShares": "122",
+            "price": 230
+        },
+        {
+            "shareName": "tcs",
+            "noOfShares": 45,
+            "price": 52565
+        },
+        {
+            "shareName": "tcs",
+            "noOfShares": 54126,
+            "price": 2133225
+        },
+        {
+            "shareName": "acc",
+            "noOfShares": 23,
+            "price": 233
+        },
+        {
+            "shareName": "CTS",
+            "noOfShares": 41,
+            "price": 250
+        }
+    ]
+}

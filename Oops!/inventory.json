@@ -3,17 +3,17 @@
         {
             "name" : "Basmati",
             "weight" : 5,
-            "rate" : 80
+            "price" : 80
         },
         {
             "name" : "Red rice",
             "weight" : 15,
-            "rate" : 90
+            "price" : 90
         },
         {
             "name" : "Brown rice",
             "weight" : 10,
-            "rate" : 70
+            "price" : 70
         }
     ],
 
@@ -21,18 +21,18 @@
         {
             "name" : "lentil",
             "weight" : 2,
-            "rate" : 45
+            "price" : 45
         },
 
         {
             "name" : "black gram",
             "weight" : 3,
-             "rate" : 40
+             "price" : 40
         },
         {
            "name" : "peas",
            "weight" : 5,
-           "rate" : 50
+           "price" : 50
         }
     ],
 
@@ -41,17 +41,17 @@
         {
             "name" : "annapurna",
             "weight" : 10,
-            "rate" : 40
+            "price" : 40
         },
         {
             "name" : "ashirvaad",
             "weight" : 8,
-            "rate" : 55
+            "price" : 55
         },
         {
             "name" : "pillsbury",
             "weight" : 8,
-            "rate" : 60
+            "price" : 60
         }
     ]
 

@@ -13,7 +13,7 @@
             }
         },
         {
-            "Name": "AnnoyingSweetlyBhavana",
+            "Name": "Bhavana",
             "Last Name": "B",
             "Address": {
                 "Street": "24",
@@ -22,18 +22,6 @@
                 "Nationality": "Indian",
                 "Zip": "573202",
                 "PhoneNum": "7795768374"
-            }
-        },
-        {
-            "Name": "Laxmi",
-            "Last Name": "K",
-            "Address": {
-                "Street": "21",
-                "City": "Bangalore",
-                "State": "Karnataka",
-                "Nationality": "Indian",
-                "Zip": "573203",
-                "PhoneNum": "9482011348"
             }
         },
         {

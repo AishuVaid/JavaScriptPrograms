@@ -146,6 +146,17 @@ class LinkedList {
         return -1;
     }
 
+
+    printele()
+    {
+        var temp=this.head;
+        while(temp)
+        {
+            var str="";
+            str=str+"name :"+temp.data.nam
+        }
+    }
+
 }
 
 

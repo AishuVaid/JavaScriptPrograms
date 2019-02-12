@@ -54,49 +54,97 @@ class Stock
         * **********************************************************/
 
 
-
-
-class Rice
+class Item
 {
     constructor(name,weight,price)
     {
         this.name=name;
         this.weight=weight;
         this.price=price;
+
     }
-    totalValue()
+    total()
     {
         return this.weight*this.price;
     }
 }
-
-    class Wheat
+class Rice extends Item
 {
     constructor(name,weight,price)
     {
-        this.name=name;
-        this.weight=weight;
-        this.price=price;
-    }
-    totalValue()
-    {
-        return this.weight*this.price;
+       super(name,weight,price)
     }
 }
-
-    class Pulses
+    class Wheat extends Item
 {
     constructor(name,weight,price)
     {
-        this.name=name;
-        this.weight=weight;
-        this.price=price;
+       
+        super(name,weight,price)
     }
-    totalValue()
+   
+}
+
+    class Pulses extends Item
+{
+    constructor(name,weight,price)
     {
-        return this.weight*this.price;
+        super(name,weight,price)
     }
 }
+
+
+
+
+
+class Player {
+  constructor(cards) {
+    this.cards = cards;
+  }
+  /**
+   * Function to sort the cards.
+   */
+  sortedCards() {
+    var sortedCards = [];
+    var access = require('../Utility/Util')
+    sortedCards = access.sortByBubble(this.cards);
+    return sortedCards;
+  }
+}
+
+
+
+class Deck
+{
+    createDeck()
+    {
+        var suit= ["♣️", "🔸", "❤️", "♠️"];
+var rank=['2','3','4','5','6','7','8','9','10',"jack","queen","king","ace"];
+var cards=suit.length * rank.length;
+var cardarr=[];
+
+for(let i=0;i<suit.length;i++)
+{
+    for(let j=0;j<rank.length;j++)
+    {
+        var temp=" ";
+        cardarr.push(temp+rank[j]+suit[i]);
+    }
+}
+
+var cards=suit.length*rank.length;
+for(let i=0;i<cards;i++)
+{
+    var num=Math.floor(Math.random()*cards);
+    var temp=cardarr[i]+" ";
+    cardarr[i]=cardarr[num];
+    cardarr[num]=temp;
+}
+return cardarr;
+    }
+}
+//module.exports = { Player };
+
 
 
  /****************Inventory Management Program***********************
@@ -217,17 +265,14 @@ class Address {
     }
     createAddress(addressb) {
         var name = read.question("Please enter your first name: ");
-        if (nameRestriction.test(name) == false) {
-            console.log("Invalid name!");
-            return false;
+        while (!nameRestriction.test(name)) {
+            console.log("Please enter string");
+            name = read.question("Please enter your first name: ");
         }
         var lastName = read.question("Please enter your last name: ");
-        /**
-         * validating last name
-         */
-        if (nameRestriction.test(lastName) == false) {
-            console.log("Invalid name!");
-            return false;
+        while(!nameRestriction.test(lastName)) {
+            console.log("Please enter string!");
+            lastName = read.question("Please enter your last name: ");
         }
         /**
          * add the address information
@@ -235,24 +280,21 @@ class Address {
         console.log("***Address Info***");
         var street = read.question("Street: ");
         var city = read.question("City: ");
-        if (nameRestriction.test(city) == false) {
-            console.log("Invalid city name!");
-            return false;
+        while(!nameRestriction.test(city)) {
+            console.log("Please enter string!");
+            city = read.question("City: ");
         }
         var state = read.question("State: ");
-        if (nameRestriction.test(state) == false) {
-            console.log("Invalid state name!");
-            return false;
+        while(!nameRestriction.test(state)) {
+            console.log("Please enter string!");
+            state = read.question("State: ");
         }
         var nation = read.question("Nationality: ");
-        if (nameRestriction.test(nation) == false) {
-            console.log("Invalid Nationality!");
-            return false;
+        while(!nameRestriction.test(nation)) {
+            console.log("Please enter string!");
+            nation = read.question("Nationality: ");
         }
         var zip = read.question("Zip code: ");
-        /**
-         * zip code validation that should not exceed length 6
-         */
         if (contactRestriction.test(zip) == false || zip.length != 6) {
             console.log("Invalid zip code!");
             return false;
@@ -299,7 +341,7 @@ class Address {
         }
         return 0;
     }
-    sorting() {
+    sorting(addressb) {
         console.log(addressb.Person.sort(this.compare1));
     }
     /**
@@ -536,31 +578,144 @@ class Address {
 
 
 
-var read=require('readline-sync')
-var file=require('fs')
-var M=require('../Utility/DSUtility')
-var s=0;
-class StockAccount
-{
-    constructor()
-    {
 
+
+
+
+
+
+
+
+
+var read = require('readline-sync');
+var file = require('fs');
+var s = 0;
+
+/************************* Stock Account Program ***************************
+ *  Stock Account Program
+ *---------------------------------
+ * @Purpose     :  To add and update the share info of customer and company.
+ * 
+ * @Use Library : Java JSON Library
+ *
+ * @description : StockAccount implements a data type that might be used by a financial institution to keep track of customer information.
+ *
+ * @function    : stockAccount keep the track of information about the company and the customer where customer can buy and sell the share .
+ *
+ * @param       : object --> objects such as customer,company which are at  stockAccountObject.
+ */
+
+class stockAccount {
+    constructor() {
     }
-    stockCreate(data)
-    {
-        var name1=read.question("Enter the name :")
-        var id1=Math.floor(Math.random()*100);
-        var share1=Math.floor(Math.random()*100);
-        console.log(id1)
+    stockCreate(data) {
+        var name1 = read.question(" enter the name of the customer: ");
+        var id1 = read.question(" enter the ID of the customer: ");
+        var share1 =read.question(" enter the number of shares: ");
+        console.log(id1);
+        data.customer.push(
+            {
+                name: name1,
+                id: id1,
+                share: share1,
+            }
+        )
+        console.log(data.customer);
+        var d = file.writeFileSync('customer.json', JSON.stringify(data));
+    }
+    buy(data, data1) {
+        var flag = false;
+        console.log(data);
+        var object = data.customer;
+        var id1 = read.question(" enter the id : ");
+        for (let i in object) {
+            if (object[i].id == id1) {
+                var index = data.customer.indexOf(data.customer[i]);
+                var customername = object[i].name;
+                console.log(" company information ");
+                console.log(data1);
+                var sym = read.question(" enter symbol of company share you want to buy : ")
+                var object1 = data1.company;
+                for (let i in object1) {
+                    if (object1[i].symbol == sym) {
+                        console.log("company number of shares price of each share");
+                        console.log(object1[i]);
+                        var name10 = object1[i].name
+                        var sym10 = object1[i].symbol;
+                        var shar = object1[i].share;
+                        do {
+                            var number = read.questionInt(" enter the number of shares you want to buy : ");
 
-        data.customer(push)
-        {
-            name : name1;
-            id : id1;
-            share : share1;
+                            if (number > shar) {
+                                console.log(" Please enter the share number which less than company shares ");
+                            }
+                            else {
+                                flag = true;
+                            }
+                        } while (!flag)
+                        var s = " customer name :  " + customername + "  and name of company  " + name10 + " & symbol " + sym10 + "  buy number of shares " + number;
+                        console.log(s);
+                        var time = new Date();
+                        console.log(" Time of buying the share is " + Math.floor(time.getSeconds()) + " sec ");
+                        var n = parseInt(data.customer[index].share)
+                        var n11 = parseInt(data1.company[i].share)
+                        var num = parseInt(number);
+                        var n1 = n + num;
+                        var n2 = n11 - num;
+                        if (n11 > num) {
+                            data.customer[index].share = n1;
+                            data1.company[i].share = n2;
+                            var d = file.writeFileSync('customer.json', JSON.stringify(data));
+                            var d1 = file.writeFileSync('company.json', JSON.stringify(data1));
+                        }
+                    }
+                }
+            }
         }
     }
-    //console.log(data.customer);
+    sell(data, data1) {
+        console.log(data);
+        var object = data.customer;
+        var id1 = read.question(" enter the id : ");
+        for (let i in object) {
+            if (object[i].id == id1) {
+                var index = data.customer.indexOf(data.customer[i])
+                var customername1 = object[i].name;
+                console.log(" company information ");
+                console.log(data1);
+                var sym12 = read.question(" enter symbol  of company you want to sell : ");
+                var object1 = data1.company;
+                for (let i in object1) {
+                    if (object1[i].symbol == sym12) {
+                        console.log("company number of shares and price of each share");
+                        console.log(object1[i]);
+                        var name11 = object1[i].name;
+                        var sym13 = object1[i].symbol;
+                        var number = read.questionInt("enter how many shares you want to sell :");
+                        var s = " customer name :" + customername1 + " and name of company " + name11 + " & symbol  " + sym13 + " sell number of shares :" + number;
+                        console.log(s);
+                        var time11 = new Date();
+                        console.log(" Time of selling the share is " + Math.floor(time11.getSeconds()) + " sec ");
+                        var n = parseInt(data.customer[index].share)
+                        var n11 = parseInt(data1.company[i].share)
+                        var num = parseInt(number);
+                        var n1 = n - num;
+                        var n2 = n11 + num;
+                        data.customer[index].share = n1;
+                        data1.company[i].share = n2;
+                        var d = file.writeFileSync('customer.json', JSON.stringify(data));
+                        var d1 = file.writeFileSync('company.json', JSON.stringify(data1));
+                    }
+                }
+            }
+        }
+    }
+    print(data, data1) {
+        console.log("customer shares information :");
+        console.log(data);
+        console.log("company shares information :");
+        console.log(data1);
+    }
 }
 
 
@@ -569,12 +724,12 @@ class StockAccount
 
 
   
-module.exports={Stock,Rice,Wheat,Pulses,inventoryManage,Address,
+module.exports={Stock,Rice,Wheat,Pulses,inventoryManage,Address,stockAccount,Player,Deck,
 
 
 
       /****************Regular Expression Demonstration.********************** *
-        * 1.Regular Expression Demonstration.
+        * 2.Regular Expression Demonstration.
         * *************************
         * @purpose : Print the Modified Message.
         * @description : Read in the following message: Hello <<name>>,
@@ -607,4 +762,59 @@ module.exports={Stock,Rice,Wheat,Pulses,inventoryManage,Address,
         fileString=fileString.replace(/01-01-2016/g,day);
         return fileString;
     },
+
+
+
+
+deckOfCards() {
+    try {
+      var suits = ["♣", "♦", "♥", "♠"];
+      var ranks = [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "Jack",
+        "Queen",
+        "King",
+        "Ace"
+      ];
+      /**
+       * To calculate total number of cards
+       */
+      var totalCards = suits.length * ranks.length;
+      /**
+       * To create a deck of array
+       */
+      var cardArray = [];
+      for (let currentSuit = 0; currentSuit < suits.length; currentSuit++) {
+        for (let currentRank = 0; currentRank < ranks.length; currentRank++) {
+          var temp = "";
+          cardArray.push(temp + ranks[currentRank] + suits[currentSuit]);
+        }
+      }
+      /**
+       * To shuffle the deck
+       */
+      for (let shuffle = 0; shuffle < totalCards; shuffle++) {
+        var num = Math.floor(Math.random() * totalCards);
+        /**
+         * Performing swapping
+         */
+        var temp = cardArray[shuffle];
+        cardArray[shuffle] = cardArray[num];
+        cardArray[num] = temp;
+      }
+      return cardArray;
+    } catch (error) {
+      console.log(error.message);
+    }
+},
+
+
 }
