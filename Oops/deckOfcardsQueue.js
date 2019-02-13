@@ -3,10 +3,11 @@
  * Execution        : Default node             cmd> node deckOfCardsQueue.js
  * @file            : deckOfCardsQueue.js
  * @overview        : To to create a Player Object having Deck of Cards, and
-                      having ability to Sort by Rank and maintain the cards in a Queue implemented using
-                      Linked List. Do not use any Collection Library. Further the Player are also arranged
-                      in Queue. Finally Print the Player and the Cards received by each Player
- * @author          : VENKATESH G.      <ven.venky08@gmail.com>
+                      having ability to Sort by Rank and maintain the cards in a
+                       Queue implemented using Linked List. Do not use any 
+                       Collection Library. Further the Player are also arranged
+                      in Queue. Finally Print the Player and
+                       the Cards received by each Player
  * @version         : 1.0.
  * @since           : 09/02/2019
  ***************************************************************************/

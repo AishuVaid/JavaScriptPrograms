@@ -22,12 +22,12 @@
         },
         {
             "shareName": "dsa",
-            "noOfShares": "100",
+            "noOfShares": 100,
             "price": 100
         },
         {
             "shareName": "abc",
-            "noOfShares": "122",
+            "noOfShares": 122,
             "price": 230
         },
         {
@@ -49,6 +49,11 @@
             "shareName": "CTS",
             "noOfShares": 41,
             "price": 250
+        },
+        {
+            "shareName": "tcs",
+            "noOfShares": 45,
+            "price": 7845
         }
     ]
 }

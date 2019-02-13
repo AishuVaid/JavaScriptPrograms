@@ -1,0 +1,43 @@
+{
+    "Doctors": [
+        {
+            "Name": "DR Vishal",
+            "Id": "50",
+            "Specialization": "MBBS",
+            "Availability": "AM",
+            "Numberofappointmaent": 0
+        },
+        {
+            "Name": "DR Shreenidhi",
+            "Id": "55",
+            "Specialization": "all",
+            "Availability": "PM",
+            "Numberofappointmaent": 0
+        }
+       
+
+    ],
+    "Patient": [
+        {
+            "Name": "Pinky",
+            "mobilenumber": "7204803794",
+            "Id": "Pink"
+        },
+        {
+            "Name": "Bhoomi",
+            "mobilenumber": "9632951787",
+            "Id": "Bhoom"
+        },
+        {
+            "Name": "Aishu",
+            "mobilenumber": "9972421973",
+            "Id": "Aish"
+        },
+        {
+            "Name": "Bhavana",
+            "mobilenumber": "9632951787",
+            "Id": "B"
+        }
+        
+    ]
+}

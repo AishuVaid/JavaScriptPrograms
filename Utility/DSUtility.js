@@ -147,22 +147,59 @@ class LinkedList {
     }
 
 
-    printele()
-    {
-        var temp=this.head;
-        while(temp)
-        {
-            var str="";
-            str=str+"name :"+temp.data.nam
+    printele() {
+        var temp = this.head;
+        while (temp) {
+            var str = "";
+            str = str + "name :" + temp.data.name + ", share :" + temp.data.share + " , price :" + temp.data.price
+            console.log(str);
+            temp = temp.next;
         }
     }
 
+
+
+
+    printShares() {
+        var arr = [];
+        if (this.head == null) {
+            return null;
+        } else {
+            var temp = this.head;
+            while (temp) {
+                arr.push(temp.data);
+                temp = temp.next;
+            }
+            return arr;
+        }
+    }
+
+    removeStock(element) {
+        var temp = this.head;
+        var prev = null;
+
+        // iterate over the list
+        while (temp != null) {
+            // comparing element & if found then remove
+            var stock = temp.data;
+            if (stock.name == element || stock.symbol == element) {
+                if (prev == null) {
+                    this.head = temp.next;
+                } else {
+                    prev.next = temp.next;
+                }
+                /**
+                 * To decrement the size of the LinkedList
+                 */
+                this.size--;
+                return temp.data;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return -1;
+    }
 }
-
-
-/***************************Stack implementation********************
- * 
- */
 
 class Stack {
     constructor() {
@@ -209,12 +246,11 @@ class Stack {
 
 
     }
-    print()
-    {
+    print() {
         var str = "";
         for (let i = 0; i < this.size; i++) {
             str = str + " " + this.item[i];
-           
+
         }
         return str;
     }
@@ -235,7 +271,7 @@ class Queue {
     deEqueue() {
         if (this.isEmpty())
 
-           return "UnderFlow";
+            return "UnderFlow";
         return this.items.shift();
     }
     isEmpty() {
@@ -252,61 +288,61 @@ class Queue {
 
 class LinkedListQueue {
     constructor() {
-      this.tail = null;
-      this.head = null;
+        this.tail = null;
+        this.head = null;
     }
     /**
      * To add an element into the rear of the queue.
      * @param {any} item
      */
     enQueue(item) {
-      /**
-       * Create a node by passing the item
-       */
-      let node = new Node(item);
-      /**
-       * If there are no head and tail, point the data to head and tail
-       */
-      if (!this.head) {
-        this.head = node;
-        this.tail = node;
-      } else {
         /**
-         * We just move the tail pointer
+         * Create a node by passing the item
          */
-        this.tail.next = node;
-        this.tail = node;
-      }
+        let node = new Node(item);
+        /**
+         * If there are no head and tail, point the data to head and tail
+         */
+        if (!this.head) {
+            this.head = node;
+            this.tail = node;
+        } else {
+            /**
+             * We just move the tail pointer
+             */
+            this.tail.next = node;
+            this.tail = node;
+        }
     }
     /**
      * To remove an item from the queue.
      */
     deQueue() {
-      if (!this.head) {
-        return "No item";
-      } else {
-        let itemToPop = this.head;
-        this.head = this.head.next;
-        return itemToPop;
-      }
+        if (!this.head) {
+            return "No item";
+        } else {
+            let itemToPop = this.head;
+            this.head = this.head.next;
+            return itemToPop;
+        }
     }
     /**
      *return true if the queue is empty.
      */
     isEmpty() {
-      return this.size() < 1;
+        return this.size() < 1;
     }
     /**
      * Returns the size of the queue
      */
     size() {
-      let current = this.head;
-      let counter = 0;
-      while (current) {
-        counter++;
-        current = current.next;
-      }
-      return counter;
+        let current = this.head;
+        let counter = 0;
+        while (current) {
+            counter++;
+            current = current.next;
+        }
+        return counter;
     }
     printList() {
         var st = ""
@@ -318,7 +354,7 @@ class LinkedListQueue {
         }
         return st;
     }
-  }
+}
 
 
 
@@ -362,7 +398,7 @@ class Dequeue {
          */
         return this.items.length == 0;
     }
-    
+
 
 }
 
@@ -422,7 +458,7 @@ class QueueLinkedList {
             }
             temp = temp.next;
         }
-        
+
         return str;
     }
 
@@ -455,9 +491,6 @@ class StackLinkedList {
         return this.size
     }
     isEmpty() {
-        /**
-         * Condition to check the size is zero.
-         */
         return top == null;
     }
     push(data) {
@@ -505,7 +538,8 @@ class StackLinkedList {
             return -1;
         }
     }
-    print() {
+    print() 
+    {
         var st = ""
         var temp = this.head
         while (temp) {
@@ -514,6 +548,25 @@ class StackLinkedList {
             temp = temp.next
         }
         return st;
+    }
+
+
+    printShares()
+    {
+        var arr=[];
+        if(this.head==null)
+        {
+            return null;
+        }
+        else{
+            var temp=this.head;
+            while(temp)
+            {
+                arr.push(temp.data);
+                temp=temp.next;
+            }
+            return arr;
+        }
     }
 }
 
@@ -524,48 +577,40 @@ class StackLinkedList {
 
 
 
-class Queue1
-{
-  constructor()
-   {
-    this.items=[];
-   }
+class Queue1 {
+    constructor() {
+        this.items = [];
+    }
 
-  enqueue(data)
-   {
-    this.items.push(data);
-   }
+    enqueue(data) {
+        this.items.push(data);
+    }
 
-  dequeue()
-   {
-    if(this.isEmpty())
-     {
-      return "Underflow";
-      }
-     return this.items.shift();
-   }
+    dequeue() {
+        if (this.isEmpty()) {
+            return "Underflow";
+        }
+        return this.items.shift();
+    }
 
-  isEmpty()
-   {
-    return this.items.length==0;
-   }
+    isEmpty() {
+        return this.items.length == 0;
+    }
 
-  printList()
-   {
-    var str="";
-    for(var i=0;i<this.items.length;i++)
-     {  
-      str=str+this.items[i]+" ";
-      return str;
-     }
-   }
+    printList() {
+        var str = "";
+        for (var i = 0; i < this.items.length; i++) {
+            str = str + this.items[i] + " ";
+            return str;
+        }
+    }
 }
-	
+
 
 
 
 module.exports = {
-    Node,LinkedList, Stack, Queue, Dequeue,QueueLinkedList, LinkedListQueue, Queue1,
+    Node, LinkedList, Stack, Queue, Dequeue, QueueLinkedList, LinkedListQueue, Queue1,StackLinkedList,
 
 
     /*******************Number of Binary Search Tree******************
@@ -595,43 +640,37 @@ module.exports = {
     },
 
 
-   /* @purpose : Print the different prime numbers of different
- * ranges in different arrays.
- * 
- * 
- * @description
- * @file : arrayofPrime.js
- * @overview : Take a range of 0 - 1000 Numbers and find the Prime numbers 
- * in that range. Store the prime numbers in a 2D Array, the first 
- * dimension represents the range 0-100, 100-200, and so on. 
- * @param : the second dimension represents the prime numbers in that range.
- */
+    /* @purpose : Print the different prime numbers of different
+  * ranges in different arrays.
+  * 
+  * 
+  * @description
+  * @file : arrayofPrime.js
+  * @overview : Take a range of 0 - 1000 Numbers and find the Prime numbers 
+  * in that range. Store the prime numbers in a 2D Array, the first 
+  * dimension represents the range 0-100, 100-200, and so on. 
+  * @param : the second dimension represents the prime numbers in that range.
+  */
 
 
 
-    isPrime(initial,final)
-    {
-        var flag=0;
-        k=0;
-        var prime=[];
+    isPrime(initial, final) {
+        var flag = 0;
+        k = 0;
+        var prime = [];
 
-        for(var index1=initial;index1<=final;index1++)
-        {
-            for(var index2=2;index2<index1;index2++)
-            {
-                if(index1%index2==0)
-                {
-                    flag=0;
+        for (var index1 = initial; index1 <= final; index1++) {
+            for (var index2 = 2; index2 < index1; index2++) {
+                if (index1 % index2 == 0) {
+                    flag = 0;
                     break;
                 }
-                else
-                {
-                    flag=1;
+                else {
+                    flag = 1;
                 }
             }
-            if(flag==1)
-            {
-                prime[k++]=index1;
+            if (flag == 1) {
+                prime[k++] = index1;
             }
         }
         return prime;
@@ -676,7 +715,7 @@ module.exports = {
             }
         }
         console.log("The Number which are prime and anagram ");
-        var req=require('util')
+        var req = require('util')
         for (let i = 0; i < array.length; i++) {
 
             for (let j = 0; j < array[i].length; j++) {
@@ -693,7 +732,7 @@ module.exports = {
         return arr2
     },
 }
-	
+
 
 
 

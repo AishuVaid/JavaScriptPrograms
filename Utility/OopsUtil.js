@@ -118,7 +118,7 @@ class Deck
 {
     createDeck()
     {
-        var suit= ["♣️", "🔸", "❤️", "♠️"];
+var suit= ["♣️", "🔸", "❤️", "♠️"];
 var rank=['2','3','4','5','6','7','8','9','10',"jack","queen","king","ace"];
 var cards=suit.length * rank.length;
 var cardarr=[];
@@ -128,7 +128,7 @@ for(let i=0;i<suit.length;i++)
     for(let j=0;j<rank.length;j++)
     {
         var temp=" ";
-        cardarr.push(temp+rank[j]+suit[i]);
+        cardarr.push(new Cards(j,i));
     }
 }
 
@@ -141,6 +141,22 @@ for(let i=0;i<cards;i++)
     cardarr[num]=temp;
 }
 return cardarr;
+    }
+}
+
+
+
+class Cards
+{
+    constructor(suit,rank)
+    {
+        this.suit=suit;
+        this.rank=rank;
+
+    }
+    printCard()
+    {
+        return ""+this.suit+this.rank;
     }
 }
 //module.exports = { Player };
@@ -656,7 +672,9 @@ class stockAccount {
                         var s = " customer name :  " + customername + "  and name of company  " + name10 + " & symbol " + sym10 + "  buy number of shares " + number;
                         console.log(s);
                         var time = new Date();
-                        console.log(" Time of buying the share is " + Math.floor(time.getSeconds()) + " sec ");
+                        var date=new Date();
+                        var day=date.toDateString();
+                        console.log(" Time of buying the share is " + Math.floor(time.getSeconds()) + " sec "+day);
                         var n = parseInt(data.customer[index].share)
                         var n11 = parseInt(data1.company[i].share)
                         var num = parseInt(number);

@@ -23,8 +23,9 @@ var pulses=object.Pulses;
 
 for(let i in rice )
 {
-  
+  console.log(i);
     var name=rice[i].name;
+
     var weight=rice[i].weight;
     var price=rice[i].price;
     var total=weight * price;
@@ -32,6 +33,7 @@ for(let i in rice )
     console.log("the total value of",rice[i].name,"is",rice[i].weight * rice[i].price );
     sumRice =sumRice+total;
     i=new UtilityOops.Rice(name,weight,price)
+    console.log(i);
    
 
 }

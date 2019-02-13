@@ -28,7 +28,6 @@ function stockAccount() {
         var object1 = new utility.stockAccount
         console.log("----------------Stock Account---------------");
         console.log("Enter 1 to create account:")
-        //console.log("Enter 2 to total value of amount in account")
         console.log("Enter 2 to buy shares")
         console.log("Enter 3 to sell shares")
         console.log("Enter 4 to information shares of company and customer")

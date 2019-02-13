@@ -35,6 +35,18 @@
                 "Zip": "573209",
                 "PhoneNum": "9482018546"
             }
+        },
+        {
+            "Name": "vishal",
+            "LastName": "trivedi",
+            "Address": {
+                "Street": "45",
+                "City": "bangalore",
+                "State": "karnataka",
+                "Nationality": "indian",
+                "Zip": "560076",
+                "PhoneNum": "7411487048"
+            }
         }
     ]
 }
