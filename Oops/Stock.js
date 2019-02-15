@@ -27,3 +27,27 @@ var price=object.Stock[key].price
 
 
 
+
+
+
+
+
+
+
+
+
+
+var input=require('./StockPortFolio');
+function main()
+{
+
+
+var result=new input.StockPortFolio
+result.showresult()
+}
+main();
+
+
+
+
+

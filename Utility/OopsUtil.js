@@ -737,12 +737,42 @@ class stockAccount {
 }
 
 
+class StockPortFolio
+{
+    result()
+    {
+        var util=require('../Utility/OopsUtil')
+        var read=require('fs');
+        var access=read.readFileSync('StockReport.json','utf8');
+        var obj=JSON.parse(input);
+        var Stock=0;
+        var stock=obj.StockReport;
+
+    for(let key in stock)
+    {
+    var name=stock[key].stockname;
+    var noofshare=stock[key].noofshare;
+    var price=stock[key].price;
+    var total=noofshare *price;
+    console.log("The Total Value Of","[",stock[i].stockname,"]","Share Is",stock[i].noofshare * stock[i].price);
+    Stock=Stock+total;
+    i=new util.Stock(name,noofshare,price);
+    //var d=i.shareprice();
+    }
+console.log("\n"+"Value Of Total Stocks: "+Stock);
+    }
+}
+
+//module.exports={StockPortFolio}
+
+
+
 
 	
 
 
   
-module.exports={Stock,Rice,Wheat,Pulses,inventoryManage,Address,stockAccount,Player,Deck,
+module.exports={Stock,Rice,Wheat,Pulses,inventoryManage,Address,stockAccount,Player,Deck,StockPortFolio,
 
 
 

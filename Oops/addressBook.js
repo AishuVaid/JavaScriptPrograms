@@ -9,7 +9,9 @@ function addressBook()
 
     console.log("******ADDRESS BOOK***********")
     console.log("1.Create profile");
-    console.log("2:Open Address Book")
+    console.log("2:Open Address Book");
+
+    
     console.log("3.Exit");
     var choice1=prompt.question("Please enter your choice :");
     switch(parseInt(choice1))

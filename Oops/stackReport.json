@@ -1,0 +1,21 @@
+{
+    "StockReport" :
+    [
+        {
+            "name" : "ABC",
+            "noofshares" : 25,
+            "shareprice" :154263
+        },
+        {
+            "name" : "PQR",
+            "noofshares" : 20,
+            "shareprice" :15020
+
+        },
+        {
+            "name" : "TUV",
+            "noofshares" : 30,
+            "shareprice" : 87459
+        }
+    ]
+}

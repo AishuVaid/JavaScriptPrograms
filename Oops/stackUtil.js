@@ -51,7 +51,8 @@ class companySharesStack {
     writeStock() {
         file.writeFileSync("/home/admin1/Desktop/JavaScript/Programs/Oops/companyStack.json");
             JSON.stringify(this.stock.printShares()),
-            function (err) {
+            function (err) 
+            {
                 if (err) {
                     throw err;
                 }

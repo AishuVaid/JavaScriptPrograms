@@ -10,7 +10,7 @@
  * The main program will be with InventoryManager.
  * @function : Get JSON Object in Java or NSDictionary in iOS. 
  * Create Inventory Object from JSON. Calculate the value for every Inventory. 
-*******************************************************`****/
+***********************************************************/
 var utility=require('../Utility/OopsUtil');
 var readline=require('readline-sync')
 var fileRead=require('fs');
