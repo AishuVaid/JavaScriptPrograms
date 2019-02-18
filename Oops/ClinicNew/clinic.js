@@ -6,11 +6,11 @@ var readline = require('readline-sync')
 class Clinic
 {
  getNameFromDoctor(object) 
- {//it will give all thetotalCountames of stock in array
+ {
  var nameArray = []
  var data = object.Doctor
  for (let key in data) 
- {//looping over each element
+ {
  nameArray.push(data[key].Name)
  }
  return nameArray;//return array
@@ -19,14 +19,10 @@ class Clinic
 
 
  getIdFromDoctor(object) 
- { /**
- * it will give all the names of stock in arra
- */
+ { 
  var nameArray = []
  var data = object.Doctor
- /**
- * looping over each element
- */
+
  for (let key in data) 
  {
  nameArray.push(data[key].Id)
